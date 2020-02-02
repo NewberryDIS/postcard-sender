@@ -29,9 +29,13 @@ $title = 'Newberry Postcard Sender';
     body, html {
         padding: 0;
         margin: 0;
-        background: rgba(37,37,37,1);
         font-family: 'Lato', sans-serif;
     }
+	body {
+
+        background: rgba(37,37,37,0.7);
+}
+
     .container {
         width: 75%;
         margin: 20px auto 5px auto;
