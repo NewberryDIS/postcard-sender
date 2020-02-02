@@ -24,10 +24,15 @@
     body, html {
         padding: 0;
         margin: 0;
-        background: rgba(37,37,37,1);
         font-family: 'Lato', sans-serif;
-    }
-        .container, .header {
+    
+}
+	body {
+
+        background: rgba(37,37,37,0.7);
+}
+
+	.container, .header {
             /* width: 70%; */
             margin: 20px auto 5px auto;
             padding: 15px;
@@ -55,7 +60,8 @@
             margin: auto;
         }
         .greeting-container, .image-td, .header, .bottomdiv {
-            background: rgba(218,218,218,0.5);
+/*            background: rgba(218,218,218,1);*/
+	    background: #fbf7f5;
             border: 3px solid black;
             margin: 10px auto;
             padding: 20px;
