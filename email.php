@@ -96,12 +96,12 @@ $title = 'Newberry Postcard Sender';
         <h1 id="result">
 <?php 
 $button = "Go Back";
-$recipientname = (IsInjected($_POST['recipientname'])) ? sendError() : $_POST['recipientname'];
-$recipientemail = (IsInjected($_POST['recipientemail'])) ? sendError() : $_POST['recipientemail'];
-$sendername = (IsInjected($_POST['sendername'])) ? sendError() : $_POST['sendername'];
-$senderemail = (IsInjected($_POST['senderemail'])) ? sendError() : $_POST['senderemail'];
-$messagetext = (IsInjected($_POST['messagetext'])) ? sendError() : $_POST['messagetext'];
-
+$recipientname = $_POST['recipientname'];
+$recipientemail = (IsClean($_POST['recipientemail'])) ? $_POST['recipientemail'] : sendError();
+$sendername = $_POST['sendername'];
+$senderemail = (IsClean($_POST['senderemail'])) ? $_POST['senderemail'] : sendError();
+$messagetext = $_POST['messagetext'];
+$psurl = "//publications.newberry.org/postcard-sender";
 $to = $recipientemail;
 $subject = $sendername . ' sent you a postcard from the Newberry Library!';
 
@@ -193,11 +193,10 @@ Newberry Library!</title>
     </table>
     <div class='bottomdiv'>
         <p>
-            The Newberry Library's Teich Collection, of over 25,000 postcards,
-            is entirely digitized, and available for sending!  This email was 
-            sent by our <a href='newberry-postcards'>Postcard Sender</a>.  
-            Feel free to explore, and use the collection in ways no one 
-            else has imagined!
+            The ever-expanding Newberry Postcards digital collection features 
+            over 25,000 images from our physical collection of more than a million 
+            postcards. This email was sent by our <a href=\"https://publications.newberry.org/postcard-sender\">Postcard Sender</a>. 
+            Feel free to explore, and use the collection in ways no one else has imagined!
         </p>
         <small>
             We do not use your or your friend's data in any way, and we will not share it.
@@ -209,29 +208,17 @@ Newberry Library!</title>
 </body>
 </html>";
 
-function IsInjected($str)
+function IsClean($str)
 {
-    $injections = array('(\n+)',
-           '(\r+)',
-           '(\t+)',
-           '(%0A+)',
-           '(%0D+)',
-           '(%08+)',
-           '(%09+)'
-           );
-               
-    $inject = join('|', $injections);
-    $inject = "/$inject/i";
+    $email_pattern = '/^[^@\s<&>]+@([-a-z0-9]+\.)+[a-z]{2,}$/i';
     
-    if(preg_match($inject,$str))
-    {
-      return true;
-    }
-    else
-    {
-      return false;
+    if ((preg_match($email_pattern, $str) && ctype_print($str)) || strlen($str) === 0) {
+            return true;
+    } else {
+        return false;
     }
 }
+
 
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
@@ -243,8 +230,7 @@ $headers .= "Cc: $senderemail\r\n";
 // ??
 $headers .= "Bcc: postcards@publications.newberry.org\r\n";
 function console_log($output, $with_script_tags = true) {
-    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
-');';
+    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .  ');';
     if ($with_script_tags) {
         $js_code = '<script>' . $js_code . '</script>';
     }
@@ -252,7 +238,7 @@ function console_log($output, $with_script_tags = true) {
 }
 
 function sendError(){
-    echo "Your email submission appears to have injections.  Please feel free to remove them, or move on.";
+    echo "Your email submission appears to have injections.  Please feel free to remove them, or move on.  ";
     console_log('hackerz');
 }
 function sendSuccess(){
@@ -280,6 +266,7 @@ mail($to, $subject, $message, $headers) ? sendSuccess() : sendFailure();
 </ul>
 <div class="buttonwrapper">
     <button onclick="goBack()"><?php echo $button ?></button>
+    <p>Send another, or browse thousands of historic postcard images: <a href="https://archive.org/details/newberrypostcards">Newberry Postcards digital collection</a>.</p>
 </div>
 </div>
 </div>
