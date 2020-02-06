@@ -1,7 +1,7 @@
 #!/bin/bash
 source postcardIds.sh
-for id in "${itemsFive[@]}"
-# started at 2782
+for id in "${itemsSix[@]}"
+# started at 3780 --- starting the big one
 do
     wget https://ia803001.us.archive.org/25/items/${id}/${id}\_scandata.xml
     pageNo=$(grep -m1 "<page leafNum=" ~/Downloads/nby_LL5282_scandata.xml | cut -c20)
