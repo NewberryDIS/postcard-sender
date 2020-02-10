@@ -27,12 +27,12 @@ body {
     padding: 0 30px 0 0;
     margin: 0;
 }
-.back {
+.verso {
     position: relative;
     /* flex: 1; */
     min-width: 600px;
     flex-basis: 600px;
-    height:  600px;
+    /* height:  600px; */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,6 +43,12 @@ body {
 }
 .form,.addresswrapper {
     height: 100%;
+}
+.input {
+    width: calc(100% - 0.75rem);
+}
+.postscript {
+    font-size: 0.85rem;
 }
 .addresswrapper {
     width: 100%;
@@ -63,6 +69,7 @@ body {
     padding: 10px 20px;
     background-color: rgba(251, 247, 245,0.85); 
     border: 1px solid rgba(37,37,37,0.5);
+    width: 50%;
 }
 .sectionbottom {
     margin: auto;
@@ -75,8 +82,12 @@ body {
     padding-top: 5px;
     /* padding-bottom: 10%; */
 }
-#submitbutton, #backbutton {
-    margin: auto;
+.buttonbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cardsbutton {
     cursor: pointer;
     transition: all 0.2s;
     padding: 10px 7px;
@@ -84,7 +95,13 @@ body {
     border: 1px solid rgba(37,37,37,0.5);
     box-shadow: 0 0 10px rgba(37,37,37,0.2);
 }
-#submitbutton:hover, #backbutton:hover {
+#submitbutton, #closebutton, #backbutton {
+    margin: auto;
+}
+#valencard, #othercard {
+    margin: 0 10px;
+}
+.cardsbutton:hover {
     /* background: rgba(0,85,170,0.4); */
     box-shadow: 0 0 10px rgba(37,37,37,0.5);
 }
@@ -94,6 +111,10 @@ header, footer {
     background-color: rgba(251, 247, 245,0.85); 
     padding: 30px 0;
     margin: 20px 0;
+}
+footer {
+    display: flex;
+    justify-content: center;
 }
 header .headerwrapper {
     width: 80%;
@@ -146,4 +167,14 @@ header h2 {
     margin: 125px auto;
     border: 3px solid rgba(37,37,37,1); 
     background-color: rgba(251, 247, 245,0.85); 
+}
+#printmessagetext {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
