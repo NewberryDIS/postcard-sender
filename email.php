@@ -2,8 +2,10 @@
 
 // image stuff
 
-$postcard = isset($_POST['id']) ? $_POST['id'] : 'nuffin';
-$page = isset($_POST['p']) ? $_POST['p'] : ' oaslo norfin';
+$postcard = isset($_POST['id']) ? $_POST['id'] : 'Something\'s broken.';
+// $page = '0';
+// $back = '1';
+$page = isset($_POST['p']) ? $_POST['p'] : ' How did you break this???  Not that I blame you, it\'s probably our fault.  Let us know, and we\'ll fix it.';
 $back = $page === '0' ? '1' : '0';
 $postcardimage = 'http://iiif.archivelab.org/iiif/' . $postcard .'$' . $page . '/full/400,/0/default.jpg';
 $postcardback = 'http://iiif.archivelab.org/iiif/' . $postcard .'$' . $back . '/full/400,/0/default.jpg';
@@ -109,6 +111,9 @@ $message = "
             .headerimg, .headertext {
                 display: inline-block;
                 height: 55px;
+            }
+            .headerimg {
+                padding: 4px 0 0 4px;
             }
             .bottomtext {
                 padding: 15px;
