@@ -20,7 +20,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-158122425-1');
     </script>
 
@@ -33,18 +32,44 @@
             // ['nby_LL12311', '0'],
             // ['nby_3BH352', '0'],
             // ['nby_LL13508', '0'],
-            // after valentines: 
-            ['nby_6BH381', '1'],
-            ['nby_LL11784', '0'],
-            ['nby_LL12011', '0'],
-            ['nby_LL10864', '0'],
-            ['nby_0BH1419', '1'],
-            ['nby_1BH1502', '1']
+            // non-holiday: 
+            // ['nby_6BH381', '1'],
+            // ['nby_LL11784', '0'],
+            // ['nby_LL12011', '0'],
+            // ['nby_LL10864', '0'],
+            // ['nby_0BH1419', '1'],
+            // ['nby_1BH1502', '1']
+            // halloween
+            // ['jm0972','0'],
+            // ['jm0974','0'],
+            // ['jm0976','0'],
+            // ['jm0978','0'],
+            // ['jm0979','0'],
+            // ['jm1051','0'],
+            // ['jm1054','0'],
+            // ['jm0969','0'],
+            // ['jm0970','0'],
+            // ['jm0971','0'],
+            // ['g4493','0']
+            // thanksgiving
+            ['g9055','0'],
+            ['g9024','0'],
+            ['g1469','0'],
+            ['jm1067','0'],
+            ['jm987','0'],
+            ['jm1064','0'],
+            ['jm986','0'],
+            ['jm1066','0'],
+            ['jm980','0'],
+            ['nby_LL13737','0'],
+            ['nby_LL14020','0'],
+            ['nby_LL13700','0'],
+            ['nby_LL11644','0']
         ];
         $rand = rand(0,count($randoms) - 1);
         $postcard = isset($_GET['id']) ? $_GET['id'] : $randoms[$rand][0];
         // the oilettes (which start with nby_LL) are all backwards in the metadata, so we reverse them here
-        $isLL = strpos($postcard, 'nby_LL') === 0 ? true : false ;
+        $isLL = (strpos($postcard, 'nby_LL') === 0 || strpos($postcard, 'jm') === 0 || strpos($postcard, 'g') === 0) ? true : false ;
         $recto = $isLL ? '0' : '1';
         $verso = $isLL ? '1' : '0';
         // $recto = '0';
@@ -59,7 +84,7 @@
         var randoms = <?php echo json_encode($randoms); ?>;
         var current = <?php echo json_encode($postcard); ?>;
         function anotherCard(type){
-            array = type === 'valen' ? randoms : sampleSet;
+            array = type === 'other' ? sampleSet : randoms;
             // https://stackoverflow.com/questions/44553426/find-the-index-of-a-sub-array-that-contains-a-number
             var currCard = array.findIndex(function(sub) {
                 return sub.indexOf(current) !== -1;
@@ -113,7 +138,7 @@
                 $('#printrecipientemail').text('Recipient\'s Email: ' + $('#recipientemail').val());
                 $('#printmessagetext').text('Message Text: ' + $('#messagetext').val());
             });
-            $('#valencard').click(function(){
+            $('#holidaycard').click(function(){
                 anotherCard('valen');
             });
             $('#othercard').click(function(){
@@ -165,8 +190,10 @@
         </div>
     </div>
     <footer class="morestrip">
-        <!-- <button class="cardsbutton" id="valencard">Random Valentine's Day Postcard</button> -->
-        <button class="cardsbutton" id="othercard">Random Postcard</button>
+        <!-- <button class="cardsbutton" id="holidaycard">Random Valentine's Day Postcard</button> -->
+        <!-- <button class="cardsbutton" id="othercard">Random Postcard</button> -->
+        <!-- <button class="cardsbutton" id="holidaycard">Random Halloween Postcard</button> -->
+        <button class="cardsbutton" id="holidaycard">Random Thanksgiving Postcard</button>
     </footer>
     <div class="modal" style="display: none;">
         <div id="sufail" >
