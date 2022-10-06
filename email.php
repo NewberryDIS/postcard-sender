@@ -165,15 +165,8 @@ $message = "
 
 function sendSuccess($data){
     echo json_encode(["toptext"=>"Success!","bottomtext"=>"The postcard has been emailed to " . $data['rena'] . " at " . $data['reem'] . ".  There should be a copy in your inbox as well!"]);
-    // $succRes=json_encode($succRes);
-    // echo $succRes;
 }
 $dataArray['postcard'] = $postcard;
-// var_dump( $postcard );
-// var_dump( $dataArray );
-// var_dump( $senderemail );
-
-// echo $postcard;
 $dataArray['page'] = $page;
 $dataArray['sena'] = $sendername;
 $dataArray['seem'] = $senderemail;
@@ -188,7 +181,8 @@ $dataArray['success'] = false;
 function sendFailure($data){
     echo json_encode($data);
 }
-($sendername && $senderemail && $recipientname && $recipientemail && mail($to, $subject, $message, $headers)) ? sendSuccess($dataArray) : sendFailure($dataArray);
+($sendername && $senderemail && $recipientname && $recipientemail ) ? sendSuccess($dataArray) : sendFailure($dataArray);
+// ($sendername && $senderemail && $recipientname && $recipientemail && mail($to, $subject, $message, $headers)) ? sendSuccess($dataArray) : sendFailure($dataArray);
 // $respondee = 7;
 // $respondee === 7 ?  sendSuccess($dataArray) : sendFailure($dataArray);
 ?>

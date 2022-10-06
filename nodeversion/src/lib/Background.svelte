@@ -6,7 +6,7 @@ const bgArray = [
         ['nby_1BH2128','1'],
         ['nby_VO184','1']
     ]
-const bgImage = bgArray[Math.round(Math.random() * 4)]
+const bgImage = bgArray[Math.floor(Math.random() * 4)]
 </script>
 
 <img src={`https://iiif.archivelab.org/iiif/${bgImage[0]}$${bgImage[1]}/full/1000,/0/default.jpg`} alt="" class="bg-image" />
