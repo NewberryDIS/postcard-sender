@@ -1,14 +1,4 @@
 <script>
-    export const prerender = true
-    import { browser } from '$app/environment';
-    import Background from '../lib/Background.svelte';
-
-    import '../styles/fonts.css';
-    import '../styles/globals.css';
-    import '../styles/overrides.css';
-
-    import Header from '../lib/Header.svelte'
-    import InputFields from '../lib/InputFields.svelte';
     import {
       Content,
       Grid,
@@ -17,6 +7,13 @@
 	  Button,
     } from "carbon-components-svelte";
     import "carbon-components-svelte/css/all.css";
+    import '../styles/fonts.css';
+    import '../styles/globals.css';
+    import '../styles/overrides.css';
+    
+    import Header from '../lib/Header.svelte'
+    import InputFields from '../lib/InputFields.svelte';
+    import Background from '../lib/Background.svelte';
 
     let holiday = 'Halloween'
 
@@ -46,12 +43,12 @@
         <Row>
             <Column>
                 <div class="wrapper">
-
                     <main>
-                        
-                        <h2>Send a Postcard to a Friend!</h2>
                         <div class="postcard-display">
-                            <img src={randomPostcard[0][0]} class="postcard-front" alt="">
+                            <div class="frontwrapper">
+
+                                <img src={randomPostcard[0][0]} class="postcard-front" alt="">
+                            </div>
                             <div class="backwrapper">
 
                                 <img src={randomPostcard[1][0]} class="postcard-back" alt="" >
@@ -73,6 +70,10 @@
 
 
 <style>
+    @media only screen and (max-width: 1200) {
+        .postcard-display {
+        }
+    }
     .buttons {
         margin: auto;
         display: flex;
@@ -80,33 +81,31 @@
     }
     .wrapper {
         position: relative;
-        width: 100%;
+        margin: auto;
+        width: 70%;
     }
     .backwrapper {
         position: relative;
     }
     main {
         position: absolute;
-        background-color: #eaebe7;
+        /* background-color: #eaebe7; */
         /* padding: 130px 50px 50px 50px; */
-        padding: 50px;
         mix-blend-mode: normal;
         width: 100%;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         
     }
     .postcard-display {
-        margin: auto;
-        width: 100%;
-        display: flex;
+        display: flex;    
+        flex-direction: column;
+        align-items: center;
     }
-    .postcard-front, .backwrapper {
+    .frontwrapper, .backwrapper {
         flex: 1;
-        width: 40%;
         max-height: calc(100vh - 130px);
         object-fit: contain;
         padding: 10px;
+        margin-top: 15px;
         /* background: repeating-linear-gradient(
             120deg,
             #eaebe7,
@@ -115,8 +114,16 @@
             #4051a3 80px
         ); */
     }
-    .backwrapper img {
-        width: 100%;
+    .postcard-front {
+        max-height: calc(100vh - 130px);
+    }
+    .postcard-back {
+        max-width: fit-content;
+    }
+    .backwrapper img, .frontwrapper img {
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         object-fit: contain;
+        max-width: 100%;
     }
 </style>

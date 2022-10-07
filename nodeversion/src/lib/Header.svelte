@@ -13,6 +13,7 @@
   </svelte:fragment>
   <a href="https://newberry.org"><Nogo /></a>
   <h1 >Postcard Sender</h1>
+  <p class="subtext">Send a postcard to a friend!</p>
 </Header>
   
 <style>
@@ -20,5 +21,8 @@
     color: #4051a3;
     padding-left: 70px;
     font-family: 'Flecha M Medium';
+  }
+  .subtext {
+    font-size: 14px;
   }
 </style>

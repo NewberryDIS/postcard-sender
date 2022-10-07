@@ -12,8 +12,5 @@
     top: 120px !important;
 }
 .bx--header~.bx--content{
-    margin-top: 130px !important;
-}
-.bx--accordion__content {
-    padding: 25px !important;
+    margin-top: 100px !important;
 }

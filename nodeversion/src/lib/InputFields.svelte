@@ -1,6 +1,5 @@
 <script>
   import { Grid, Row, Column, Form, TextArea, TextInput, Button } from "carbon-components-svelte";
-  import nodemailer from 'nodemailer'
   let message, fromemail, toemail
   let sendMessage = "Send Email!"
 
@@ -22,7 +21,7 @@ const submitEmail = () => {
                     <TextArea
                         hidelabel
                         placeholder="Your Message..."
-                        rows={10}
+                        rows={7}
                         bind:value={message}
                     />
                 </div>
@@ -69,9 +68,8 @@ const submitEmail = () => {
     }
     .postcard-coverer {
         position: absolute;
-        top: 10%;
         right: 0;
-        bottom: 0;
+        bottom: 10%;
         left: 0;
         padding: 10px;
     }
