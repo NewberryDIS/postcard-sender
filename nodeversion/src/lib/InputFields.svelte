@@ -4,37 +4,9 @@
 
     let message, fromemail, toemail
     let sendMessage = "Send Email!"
-
-    console.log(import.meta.env) 
-    sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY)
-    const msg = {
-        to: 'whiten@newberry.org', // Change to your recipient
-        from: 'postcards@newberry.org', // Change to your verified sender
-        subject: 'Sending with SendGrid is Fun',
-        text: 'and easy to do anywhere, even with Node.js',
-        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-    }
-
-const submitEmail = () => {
-    console.log(message)
-    console.log(fromemail)
-    console.log(toemail)
-     
-    sendMessage = "Email sent!"
-
-    sgMail
-        .send(msg)
-        .then(() => {
-            console.log('Email sent')
-        })
-        .catch((error) => {
-            console.error(error)
-        })
-
-    }
-
-
-
+    function submitForm() {
+    fetch("/api/sendmail");
+  }
 
 </script>
 <div class="postcard-coverer">
@@ -76,9 +48,13 @@ const submitEmail = () => {
         </Row>
         <Row>
             <Column sm={{ span: 4, offset: 0 }}>
-                <div class="buttons">
+                <!-- <div class="buttons">
                     <Button kind="secondary" on:click={() => submitEmail()} >{sendMessage}</Button>
-                </div>
+                </div> -->
+            
+<form on:submit|preventDefault={submitForm}>
+    <button type="submit">Submit</button>
+  </form>
             </Column>
         </Row>
     </Grid>

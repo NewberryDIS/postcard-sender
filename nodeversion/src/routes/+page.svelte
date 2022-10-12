@@ -59,10 +59,10 @@
                         </div>
                         <div class="buttons">
                 
-                            <Button kind="secondary" href="/">Random {holiday} Postcard</Button>
+                            <Button kind="secondary" href="/#">Random {holiday} Postcard</Button>
                         </div>
                         <div class="footer-links">
-
+<!-- 
                             <ButtonSet >
                                 
                                 <Button kind="secondary" href="diginewb">
@@ -78,7 +78,7 @@
                                     cortex
                                 </Button>
                                 
-                            </ButtonSet>
+                            </ButtonSet> -->
                         </div>
                     </main>
                 </div>
