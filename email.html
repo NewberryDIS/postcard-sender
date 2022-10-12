@@ -1,16 +1,33 @@
 <head>
     <title>{{fromname}} has sent you a postcard!</title>
     <style>
+    @media only screen and (max-width: 600px) {
+  header {
+        margin:  auto;
+        padding: 10px;
+        height: auto !important;
+        text-align: center;
+  }
+  body {
+        margin-top: 20px auto;
+  }
+  main {
+        width: 100% !important;
+  }
+  
+}
         body {
             padding: 0;
             margin: 0;
             background: linear-gradient(60deg, #eaebe7 0%, #eaebe7 50%, #cdb8d1 50%, #cdb8d1 100%);
+            font-family: sans-serif;
         }
         header {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-image: url('');
             background: linear-gradient(120deg, #cdb8d1 0%, #cdb8d1 50%, #eaebe7 50%, #eaebe7 100%);
             height: 55px;
         }
@@ -30,33 +47,25 @@
             padding: 15px;
             position: relative;
         }
-        img {
+        .postcard-back {
+            background: url('https://digital.newberry.org/postcard-sender/pic-two.jpeg');
+            background-size: contain
+
+        }
+        img, .postcard-back {
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             border: 1px solid rgba(0, 0, 0, 1);
             max-width: 100%;
         }
-        .message, .senderbox, footer {
+        .message, footer {
 
             background: rgba(255,255,255,0.75);
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             border: 1px solid rgba(0, 0, 0, 1);
         }
-        .message, .senderbox {
-            position: absolute;
-            padding: 35px;
-            width: 30%;
-            bottom: 10%;
-            left: 5%;
-        }
         .message {
-
-            bottom: 10%;
-            left: 5%;
-        }
-        .senderbox {
-
-            bottom: 10%;
-            right: 5%;
+            padding: 35px;
+            width: 100%;
         }
         footer {
             padding: 35px;
@@ -68,7 +77,7 @@
 <body>
     <header>
         <h1>
-            {{from_name}} has sent you a postcard!
+            {{fromname}} has sent you a postcard!
 
         </h1>
         <p>
@@ -77,18 +86,13 @@
     </header>
     <main>
         <div class="postcard-front">
-            <img src="pic-one.jpg" alt="">
+            <img src="https://digital.newberry.org/postcard-sender/pic-one.jpg" alt="">
         </div>
         <div class="postcard-back">
-            <img src='pic-two.jpeg' alt="">
             <div class="message">
                 {{message}}
             </div>
-            <div class="senderbox">
-                {{sender_name}}
-            </div>
         </div>
-
     </main>
     <footer>
         The ever-expanding <a href="https://archive.org/details/newberrypostcards">Newberry Postcards digital collection</a> features over 25,000 images from our physical collection of more than a million postcards. This email was sent by our <a href="https://digital.newberry.org/postcard-sender">Postcard Sender</a>. Feel free to explore, and use the collection in ways no one else has imagined!

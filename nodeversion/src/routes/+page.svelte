@@ -5,6 +5,8 @@
       Row,
       Column,
 	  Button,
+      ClickableTile,
+	  ButtonSet
     } from "carbon-components-svelte";
     import "carbon-components-svelte/css/all.css";
     import '../styles/fonts.css';
@@ -19,7 +21,7 @@
 
     import { halloween as postcardArray} from '../postcards'
 
-    let randomIndex = Math.round(Math.random() * postcardArray.length) -1
+    const randomIndex = Math.round(Math.random() * postcardArray.length) -1
     $: randomPostcard = postcardArray[randomIndex]
     const randomize = () => {
         let newIndex = Math.round(Math.random() * postcardArray.length) -1
@@ -56,17 +58,35 @@
                             </div>
                         </div>
                         <div class="buttons">
+                
+                            <Button kind="secondary" href="/">Random {holiday} Postcard</Button>
+                        </div>
+                        <div class="footer-links">
 
-                            <Button kind="secondary" on:click={() => randomize()}>Random {holiday} Postcard</Button>
+                            <ButtonSet >
+                                
+                                <Button kind="secondary" href="diginewb">
+                                    digital newberry
+                                </Button>
+                                <Button kind="secondary" href=".org">
+                                    Newberry Library
+                                </Button>
+                                <Button kind="secondary" href="postcardcoll">
+                                    postcard collection
+                                </Button>
+                                <Button kind="secondary" href="collections">
+                                    cortex
+                                </Button>
+                                
+                            </ButtonSet>
                         </div>
                     </main>
                 </div>
-                
             </Column>
         </Row>
     </Grid>
 </Content>
-  
+
 
 
 <style>
@@ -74,15 +94,34 @@
         .postcard-display {
         }
     }
-    .buttons {
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        /* background-color: white; */
+        /* height: 120px; */
+        /* margin-top: -120px; */
+    }
+    .footer-links {
+        display: flex;    
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         margin: auto;
+        margin-top: 15px;
+    }
+    .buttons {
+        margin:  auto;
         display: flex;
         justify-content: center;
+
     }
     .wrapper {
         position: relative;
         margin: auto;
         width: 70%;
+
     }
     .backwrapper {
         position: relative;
@@ -93,6 +132,7 @@
         /* padding: 130px 50px 50px 50px; */
         mix-blend-mode: normal;
         width: 100%;
+        /* padding-bottom: 100px; */
         
     }
     .postcard-display {
@@ -120,10 +160,15 @@
     .postcard-back {
         max-width: fit-content;
     }
-    .backwrapper img, .frontwrapper img {
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    .postcard-front, .postcard-back {
         object-fit: contain;
         max-width: 100%;
+    }
+    footer, .postcard-front, .postcard-back  {
+        padding: 10px;
+        border-radius: 5px;
+        background: #eaebe7;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
     }
 </style>

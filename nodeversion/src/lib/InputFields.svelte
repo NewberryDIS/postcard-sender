@@ -1,7 +1,19 @@
 <script>
-  import { Grid, Row, Column, Form, TextArea, TextInput, Button } from "carbon-components-svelte";
-  let message, fromemail, toemail
-  let sendMessage = "Send Email!"
+    import { Grid, Row, Column, Form, TextArea, TextInput, Button } from "carbon-components-svelte";
+    import sgMail from '@sendgrid/mail'
+
+    let message, fromemail, toemail
+    let sendMessage = "Send Email!"
+
+    console.log(import.meta.env) 
+    sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY)
+    const msg = {
+        to: 'whiten@newberry.org', // Change to your recipient
+        from: 'postcards@newberry.org', // Change to your verified sender
+        subject: 'Sending with SendGrid is Fun',
+        text: 'and easy to do anywhere, even with Node.js',
+        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    }
 
 const submitEmail = () => {
     console.log(message)
@@ -9,8 +21,21 @@ const submitEmail = () => {
     console.log(toemail)
      
     sendMessage = "Email sent!"
-    sendMessage = "Error!  See console for details."
-  }
+
+    sgMail
+        .send(msg)
+        .then(() => {
+            console.log('Email sent')
+        })
+        .catch((error) => {
+            console.error(error)
+        })
+
+    }
+
+
+
+
 </script>
 <div class="postcard-coverer">
     <Grid>
@@ -20,7 +45,7 @@ const submitEmail = () => {
                         
                     <TextArea
                         hidelabel
-                        placeholder="Your Message..."
+                        placeholder={import.meta.env.SSR}
                         rows={7}
                         bind:value={message}
                     />
