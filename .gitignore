@@ -1,0 +1,11 @@
+cruft
+.DS_Store
+nodeversion/.env
+nodeversion/build
+nodeversion/.DS_Store
+nodeversion/node_modules
+nodeversion/.svelte-kit
+nodeversion/.svelte-kit_
+nodeversion/package
+nodeversion/.env
+nodeversion/.env.*
