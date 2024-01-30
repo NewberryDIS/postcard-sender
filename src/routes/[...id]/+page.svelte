@@ -8,6 +8,9 @@
     import Gallery from "$lib/Gallery.svelte" 
     import ShareButtons from "$lib/ShareButtons.svelte" 
 </script>
+
+    <svelte:head><title>Newberry: {data.galleryData.context}</title></svelte:head>
+
 <main>
     <div class="logo-wrapper">
         <NewberryDCLogo />
@@ -42,16 +45,9 @@
     h1, p {
         margin: 0;
     }
-    main, .content {
-        max-height: 100vh ;
-        height: 100vh;
-        overflow: hidden;
-    }
     main {
         display: flex;
         gap: 11px;
-        justify-content: space-between;
-        align-items: start;
 
     }
     .featured-image{

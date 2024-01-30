@@ -188,8 +188,4 @@
         justify-content: start;
         gap: 3px;
     }
-    .gallery {
-        max-height: 100vh;
-        overflow: auto;
-    }
 </style>

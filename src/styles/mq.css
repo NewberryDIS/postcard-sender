@@ -1,0 +1,27 @@
+/* @media screen and (max-width 600px){} */
+@media screen and (max-width: 1023px){
+  main {
+    flex-direction : column;
+
+  }
+}
+/* @media screen and (min-width 601px) and (max-width: 1023px){} */
+/* @media screen and (min-width 1024px) and (max-width: 1500px){} */
+@media screen and (min-width: 1024px) {
+    main, .content {
+        max-height: 100vh ;
+        height: 100vh;
+        overflow: hidden;
+    }
+  main {
+    flex-direction : row;
+        justify-content: space-between;
+        align-items: start;
+  }
+
+    .gallery {
+        max-height: 100vh;
+        overflow: auto;
+    }
+}
+
