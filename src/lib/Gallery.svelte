@@ -16,7 +16,7 @@
     $: postcards = galleryData.postcards
 </script>
 <div class="dropdown">
-    <button class="selected"><span>{galleryData.title}</span><Arrow /></button>
+    <div class="selected"><span>{galleryData.title}<Arrow /></span></div>
     <ul>
         {#each slugs as s}
             <li>
@@ -44,7 +44,7 @@
             {#each postcards as postcard}
                 <a
                     class={`tile ${postcard.pixel ? '' : ' image-tile'}`}
-                    href="{base}/{postcard.repImage}"
+                    href="{base}/{postcard.mei}"
                     data-alt={postcard.title}
                 >
                     <img
@@ -62,16 +62,14 @@
 <style>
     .dropdown li {
         height: 0px;
-        /* height: 22px; */
-
+        border: 0;
         transition-property: height;
         transition-duration: 300ms;
     }
-    .dropdown :is(li, button){
-        box-sizing: border-box;
+    .dropdown :is(li, button, .selected){
         width: 100%;
     }
-    .dropdown button {
+    .dropdown button, .selected {
         position: relative;
         font-family: 'styrene';
         font-size: 0.87rem;
@@ -83,23 +81,21 @@
 
         border: 1px solid rgb(var(--bg-color-2));
 
-    }
-    .dropdown button {
         position: relative;
         z-index: 1; /* matters! */
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
         overflow: hidden;
     }
-    .dropdown button:not(.selected, .active)::before {
-        transform: translateX(-50%);
-    }
-    /* .dropdown button:is(.selected, .active)::before { */
-    /*     background: linear-gradient(to right,  rgb(var(--bg-color-1)) 0%, rgb(var(--bg-color-1)) 50%,rgb(var(--bg-color-2)) 50%, rgb(var(--bg-color-2)) 100%); */ 
-    /*     background: linear-gradient(to right,  rgb(var(--bg-color-2)) 0%, rgb(var(--bg-color-2)) 50%,rgb(var(--bg-color-1)) 50%, rgb(var(--bg-color-1)) 100%); */
-    /* } */
-
-    .dropdown button::before {
+    .inactive::before {
         background: linear-gradient(to right,  rgb(var(--bg-color-2)) 0%, rgb(var(--bg-color-2)) 50%,rgb(var(--bg-color-1)) 50%, rgb(var(--bg-color-1)) 100%);
+    }
+    .active::before {
+        background: linear-gradient(to right,  rgb(var(--bg-color-1)) 0%, rgb(var(--bg-color-1)) 50%,rgb(var(--bg-color-2)) 50%, rgb(var(--bg-color-2)) 100%);
+        /* background: linear-gradient(to right,  rgb(var(--bg-color-2)) 0%, rgb(var(--bg-color-2)) 50%,rgb(var(--bg-color-1)) 50%, rgb(var(--bg-color-1)) 100%); */
+    }
+
+    :is(.active, .inactive, .selected)::before {
         content: "";
         position: absolute;
         top: 0;
@@ -108,25 +104,21 @@
         height: 100%;
         transition: transform 0.4s;
         z-index: -1;
-    }
-    .dropdown ul button:not(.selected, .active):hover::before,
-    .dropdown ul button:not(.selected, .active):focus::before  {
-        transform: translateX(0);
-    }
-    .dropdown ul button:is(.selected, .active):hover::before,
-    .dropdown ul button:is(.selected, .active):focus::before  {
         transform: translateX(-50%);
     }
-    .active, .selected {
-        /* background: rgb(var(--bg-color-2)); */
+    .inactive:hover::before,
+    .inactive:focus::before  {
+        transform: translateX(0);
+    }
+    .active:hover::before,
+    .active:focus::before  {
+        transform: translateX(0);
+    }
+    .active {
         background: linear-gradient(to right, 
-
             rgba(var(--bg-color-1)) 0%,
             rgba(var(--bg-color-2)) 50%,
             rgba(var(--bg-color-2)) 100% );
-        /* background-size:   0 100%; */
-        /* background-position:  0 100%; */
-        /* background-repeat: no-repeat; */
         transition: 300ms;
     }
     .active:hover  {
@@ -136,15 +128,32 @@
             rgba(var(--bg-color-1)) 50%,
             rgba(var(--bg-color-2)) 100% );
     }
-    .dropdown:hover li {
+    .dropdown:hover li{
         height: 22px;
     }
+    .selected {
+        background: rgb(var(--bg-color-1));
+        border: 1px solid rgb(var(--bg-color-1));
+    }
+    .selected  span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        z-index: 1;
+        height: 22px;
+        margin: 1px 2px 1px 2px;
+        padding: 0 4px;
+        border: 1px solid rgb(var(--bg-color-2));
+
+    }
     .dropdown:hover ul {
+        pointer-events: auto;
         opacity: 0.99;
-        border: 1px solid rgb(var(--fg-1));
     }
     .dropdown ul {
 
+        pointer-events: none;
         background: rgb(var(--bg-color-1));
         transition-property: opacity;
         transition-duration: 150ms;
@@ -152,10 +161,11 @@
         opacity: 0.01;
         border: 0;
         position: absolute;
-        top: 22px;
+        top: 25px;
         list-style-type: none;
         box-sizing: border-box;
         width: 100%;
+        /* z-index: 2; */
         padding: 3px;
         display: flex;
         flex-direction: column;
@@ -179,7 +189,6 @@
         gap: 3px;
     }
     .gallery {
-        /* width: 450px; */
         max-height: 100vh;
         overflow: auto;
     }
