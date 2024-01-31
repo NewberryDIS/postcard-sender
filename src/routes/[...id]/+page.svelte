@@ -1,15 +1,17 @@
 <script lang="ts">
 
     export let data
-    // console.log(data)
+    console.log(data.postcards)
     import {base} from '$app/paths'
     import { imgUrl } from '$lib'
     import NewberryDCLogo from "$lib/NewberryDCLogo.svelte" 
     import Gallery from "$lib/Gallery.svelte" 
     import ShareButtons from "$lib/ShareButtons.svelte" 
+    const imagess = data.alpca.map(a => a.image )
+    // console.log(data.alpca)
 </script>
 
-    <svelte:head><title>Newberry: {data.galleryData.context}</title></svelte:head>
+    <svelte:head><title>Newberry Postcards</title></svelte:head>
 
 <main>
     <div class="logo-wrapper">
@@ -32,7 +34,13 @@
         <!-- <img src="{base}/webp/{data.itemData.image}.webp" alt="" /> -->
     </div>
     <div class="gallery">
-        <Gallery galleryData={ data.galleryData } />
+        <!-- <Gallery galleryData={ data.galleryData } postcards={ data.postcards } /> -->
+        <ul>
+            {#each imagess as img}
+            <li>wget -O {img}.jpg https://collections.newberry.org/IIIF3/Image/{img}/full/300,/0/default.jpg && convert {img}.jpg {img}.webp
+            {/each}
+        </ul>
+
     </div>
 </main>
 

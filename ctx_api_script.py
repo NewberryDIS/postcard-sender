@@ -5,7 +5,7 @@ from slugify import slugify
 
 def fetch_data(mei):
     api_url = f'{package_extractor[0]}{mei}{package_extractor[1]}{token}'
-    # print(api_url)
+    print(api_url)
     response = requests.get(api_url)
     return response.json()
 
@@ -17,6 +17,7 @@ def process_top_level_data(api_data):
             'title': api_entry['Title'],
             'slug': slugify(api_entry['Title']),
             'mei': api_entry['MediaEncryptedIdentifier'],
+            'context': api_entry['new.Context'],
             'postcards': []
         }
         _all_galleries.append(processed_data)
@@ -33,8 +34,8 @@ def process_gallery_data(gallery, gallery_api_data):
 
     for api_entry in gallery_api_data['APIResponse']['Content']:
         processed_data = {
+            'gallery': gallery['slug'],
             'title': api_entry['Title'],
-            'slug': slugify(api_entry['Title']),
             'mei': api_entry['MediaEncryptedIdentifier'],
         }
         gallery['postcards'].append(processed_data)
@@ -61,7 +62,7 @@ def process_postcard_data(postcard, postcard_api_data):
 
 package_extractor = [
     'https://collections.newberry.org/API/PackageExtractor/v1.0/Extract?Package=',
-    '&PackageFields=SystemIdentifier,Title,new.Context,CoreField.IIIFResourceType,MediaEncryptedIdentifier,MaxHeight,MaxWidth,Link&RepresentativeFields=SystemIdentifier,MediaEncryptedIdentifier,Title,MaxWidth,MaxHeight,CoreField.IIIFResourceType&ContentFields=SystemIdentifier,MediaEncryptedIdentifier,Title,Link,CoreField.IIIFResourceType,MaxWidth,MaxHeight,Document.RepresentativeIdentfier,DocumentRepresentative.DocWidth,DocumentRepresentative.DocHeight&format=json&token='
+    '&PackageFields=SystemIdentifier,Title,new.Context,CoreField.IIIFResourceType,MediaEncryptedIdentifier,MaxHeight,MaxWidth,Link&RepresentativeFields=SystemIdentifier,MediaEncryptedIdentifier,Title,MaxWidth,MaxHeight,CoreField.IIIFResourceType&ContentFields=SystemIdentifier,MediaEncryptedIdentifier,Title,Link,CoreField.IIIFResourceType,MaxWidth,MaxHeight,Document.RepresentativeIdentfier,DocumentRepresentative.DocWidth,DocumentRepresentative.DocHeight,new.Context&format=json&token='
 ]
 # all_galleries_api_url = [
 #     'https://collections.newberry.org/API/PackageExtractor/v1.0/Extract?Package=',

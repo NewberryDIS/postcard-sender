@@ -38,6 +38,8 @@
   "type": "module",
   "dependencies": {
     "@egjs/svelte-grid": "^1.15.0",
-    "@vercel/kv": "^1.0.1"
+    "@prisma/client": "^5.9.0",
+    "@vercel/kv": "^1.0.1",
+    "prisma": "^5.9.0"
   }
 }

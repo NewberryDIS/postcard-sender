@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model gallery {
+  id         Int    @id @default(autoincrement())
+  title      String @db.VarChar(255)
+  slug       String @unique @db.VarChar(255)
+  mei        String @db.VarChar(255)
+  image      String @db.VarChar(255)
+  imageTitle String @db.VarChar(255)
+  context    String @db.VarChar(255)
+  width      Int
+  height     Int
+}
+
+model postcard {
+  id         Int    @id @default(autoincrement())
+  title      String @db.VarChar(255)
+  mei        String @unique @db.VarChar(255)
+  image      String @db.VarChar(255)
+  imageTitle String @db.VarChar(255)
+  gallery    String @db.VarChar(255)
+  width      Int
+  height     Int
+}

@@ -8,12 +8,11 @@
     const align = "center";
     const defaultDirection = "end" 
 
-
-    // $: console.log(postcards)
+    $: console.log(postcards)
     async function getPostcards(s) {
-        galleryData = await fetch(`${base}/api/pc?slug=${s}`).then(r => r.json())
+        postcards = await fetch(`${base}/api/pc?slug=${s}`).then(r => r.json())
     }
-    $: postcards = galleryData.postcards
+    // $: postcards = galleryData.postcards
 </script>
 <div class="dropdown">
     <div class="selected"><span>{galleryData.title}<Arrow /></span></div>
@@ -48,10 +47,10 @@
                     data-alt={postcard.title}
                 >
                     <img
-                        src="{base}/webp/{postcard.repImage}.webp"
-                        onerror={ () => this.src=imgUrl(postcard.repImage, 'thumb') }
+                        src="{base}/webp/{postcard.image}.webp"
+                        onerror={ () => this.src=imgUrl(postcard.image, 'thumb') }
                         width="200"
-                        class="thumb no-share"
+                        class="thumb"
                         alt={postcard.title}
                     />
                 </a>
