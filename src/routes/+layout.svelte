@@ -7,5 +7,4 @@
     await import('$lib/dark-mode-toggle.js');
   })
 </script>
-<dark-mode-toggle></dark-mode-toggle>
 <slot />

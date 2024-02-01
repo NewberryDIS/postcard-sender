@@ -29,6 +29,7 @@
         <section>
             <ShareButtons />
         </section>
+            <dark-mode-toggle></dark-mode-toggle>
         <!-- <img src="{base}/webp/{data.itemData.image}.webp" alt="" /> -->
     </div>
     <div class="gallery">
@@ -66,6 +67,7 @@ font-size: clamp(1rem, 0.7413rem + 0.9199vw, 1.33rem);
         margin: 11px;
     }
     .content {
+        position: relative;
         flex: 1;
         min-width: 0;
         min-height: 0;

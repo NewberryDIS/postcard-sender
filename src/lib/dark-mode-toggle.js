@@ -27,7 +27,7 @@ class CustomComponent extends HTMLElement {
         const style = document.createElement('style');
         style.textContent = `
             :host {
-                position: fixed;
+                position: absolute;
                 bottom: 20px;
                 left: 20px;
             }
