@@ -1,19 +1,20 @@
 <script>
     import { base  } from '$app/paths'
     import { imgUrl, slugs } from '$lib'
-    export let galleryData, postcards
+    export let data
     import { MasonryGrid } from "@egjs/svelte-grid";
     import Arrow from '$lib/icons/arrow.svelte'
     const gap = 5;
     const align = "center";
     const defaultDirection = "end" 
-
-    $: console.log(postcards)
+    
+    let updatedData = data
     async function getPostcards(s) {
-        postcards = await fetch(`${base}/api/pc?slug=${s}`).then(r => r.json())
+        updatedData = await fetch(`${base}/api/pc?id=${s}`).then(r => r.json())
     }
-    // $: postcards = galleryData.postcards
+    $: ({postcards, galleryData} = updatedData ) 
 </script>
+    <p class="more-label">Send another!</p>
 <div class="dropdown">
     <div class="selected"><span>{galleryData.title}<Arrow /></span></div>
     <ul>
@@ -29,7 +30,6 @@
         {/each}
     </ul>
 </div>
-<div class="gallery">
     <MasonryGrid
         { defaultDirection }
         id="images"
@@ -47,7 +47,7 @@
                     data-alt={postcard.title}
                 >
                     <img
-                        src="{base}/webp/{postcard.image}.webp"
+                        src="{base}/images/{postcard.image}.webp"
                         onerror={ () => this.src=imgUrl(postcard.image, 'thumb') }
                         width="200"
                         class="thumb"
@@ -57,8 +57,11 @@
             {/each}
         {/if}
     </MasonryGrid>
-</div>
 <style>
+    .more-label {
+        text-align: center;
+        margin: 6px auto 0 auto;
+    }
     .dropdown li {
         height: 0px;
         border: 0;
@@ -177,8 +180,8 @@
         margin: 0;
     }
     .dropdown {
-        width: 100%;
-        margin-block: 11px;
+        width: calc(100% - 22px);
+        margin: 0 11px 11px 11px;
         z-index: 9001;
         position: relative;
         display: flex;

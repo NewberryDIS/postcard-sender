@@ -1,14 +1,12 @@
 <script lang="ts">
 
     export let data
-    console.log(data.postcards)
+    // console.log(data.postcards)
     import {base} from '$app/paths'
     import { imgUrl } from '$lib'
     import NewberryDCLogo from "$lib/NewberryDCLogo.svelte" 
     import Gallery from "$lib/Gallery.svelte" 
     import ShareButtons from "$lib/ShareButtons.svelte" 
-    const imagess = data.alpca.map(a => a.image )
-    // console.log(data.alpca)
 </script>
 
     <svelte:head><title>Newberry Postcards</title></svelte:head>
@@ -34,13 +32,7 @@
         <!-- <img src="{base}/webp/{data.itemData.image}.webp" alt="" /> -->
     </div>
     <div class="gallery">
-        <!-- <Gallery galleryData={ data.galleryData } postcards={ data.postcards } /> -->
-        <ul>
-            {#each imagess as img}
-            <li>wget -O {img}.jpg https://collections.newberry.org/IIIF3/Image/{img}/full/300,/0/default.jpg && convert {img}.jpg {img}.webp
-            {/each}
-        </ul>
-
+        <Gallery { data } />
     </div>
 </main>
 
@@ -52,6 +44,14 @@
     }
     h1, p {
         margin: 0;
+        text-align: center;
+    }
+    h1 {
+        max-width: calc(100vw - 100px);
+font-size: clamp(2rem, 0.4321rem + 5.5749vw, 4rem);
+    }
+    p {
+font-size: clamp(1rem, 0.7413rem + 0.9199vw, 1.33rem);
     }
     main {
         display: flex;
@@ -59,15 +59,17 @@
 
     }
     .featured-image{
-        max-width: 90%;
         object-fit: contain;
+        max-height: calc(90% - 60px);
+    }
+    .caption {
+        margin: 11px;
     }
     .content {
+        flex: 1;
         min-width: 0;
         min-height: 0;
         box-sizing: border-box;
-        padding: 100px 11px 11px 11px;
-        flex: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -94,9 +96,6 @@
     section p {
         padding: 0;
         margin: 0;
-    }
-    .gallery {
-        flex: 1;
     }
 
 </style>

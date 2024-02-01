@@ -13,13 +13,13 @@
         <span class="icon">
             <EmailIcon />
         </span>
-        <span class="btn-label">Email</span>
+        <span class="btn-label">Send an email</span>
     </button>
     <button data-network="sms" class="st-custom-button">
         <span class="icon">
             <SmsIcon />
         </span>
-        <span class="btn-label">Text Message</span>
+        <span class="btn-label">Send a text</span>
     </button>
     <button data-network="copy" class="st-custom-button">
         <span class="icon">
@@ -31,7 +31,7 @@
         <span class="icon">
             <LetterIcon />
         </span>
-        <span class="btn-label">Send another postcard</span>
+        <span class="btn-label">View in our Digital Collections</span>
     </a>
     <!-- <button class="st-custom-button"> -->
     <!--   <span class="icon"> -->
@@ -91,19 +91,11 @@
     }
 
     .st-custom-buttons {
-        width: clamp(90%, 73%, 66%);
-        margin: 0 auto;
-        display: grid;
-        grid-template-rows: repeat(2, 1fr); /* Two rows, each taking 1 fraction of available space */
-        grid-template-columns: repeat(2, 1fr); /* Two columns, each taking 1 fraction of available space */
-        gap: 3px;
+        margin: 50px auto;
     }
 
     .st-custom-buttons a {
         text-decoration: none;
-    }
-
-    .st-custom-button {
     }
 
     .icon {

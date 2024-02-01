@@ -15,7 +15,7 @@ def process_top_level_data(api_data):
     for api_entry in api_data['APIResponse']['Content']:
         processed_data = {
             'title': api_entry['Title'],
-            'slug': slugify(api_entry['Title']),
+            'slug': slugify(api_entry['Title'].replace("'","")),
             'mei': api_entry['MediaEncryptedIdentifier'],
             'context': api_entry['new.Context'],
             'postcards': []

@@ -19,6 +19,21 @@ def create_csv_files(json_file_path):
                     print(postcard[key])
                 postcards_writer.writerow([postcard[key] for key in postcards_header])
 
+
+    pcard_gallery_header = ["mei", "gallery"]
+    with open('imports/pcard_gallery.csv', 'w', newline='\n') as pcard_gallery_file:
+        pcard_gallery_writer = csv.writer(pcard_gallery_file, lineterminator="\n")
+        pcard_gallery_writer.writerow(pcard_gallery_header)
+        
+        for gallery in all_galleries:
+            for postcard in gallery["postcards"]:
+                print(postcard['title'])
+                for key in pcard_gallery_header:
+                    print(key)
+                    print(postcard[key])
+                pcard_gallery_writer.writerow([postcard[key] for key in pcard_gallery_header])
+
+
     # Create CSV file for galleries
     galleries_header = ["title", "slug", "mei", "context", "image", "imageTitle", "width", "height"]
     with open('imports/galleries.csv', 'w', newline='\n') as galleries_file:

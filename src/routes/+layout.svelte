@@ -1,6 +1,11 @@
-<script>
+<script lang="ts">
   import '$styles/newberry.css'
   import '$styles/mq.css'
-</script>
+  import { onMount } from 'svelte'
 
+  onMount( async () => {
+    await import('$lib/dark-mode-toggle.js');
+  })
+</script>
+<dark-mode-toggle></dark-mode-toggle>
 <slot />

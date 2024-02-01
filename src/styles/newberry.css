@@ -36,7 +36,7 @@ html {
   /* --fg-color-2: var(--lavender); */
   /* --fg-color-1: var(--granite); */
 }
-:root {
+body:not(.dark) {
   --splash-color: var(--sapphire);
   --fg-color-1: var(--midnight);
   --fg-color-2: var(--mulberry);
@@ -56,13 +56,20 @@ html {
   );
   color: rgb(var(--fg-color-1));
 }
+body.dark {
+	--splash-color: var(--lavender);
+	--bg-color-2: var(--sapphire);
+	--bg-color-1: var(--midnight);
+	--fg-color-2: var(--lavender);
+	--fg-color-1: var(--granite);
+}
+
 .content,
 main {
   background: rgb(var(--bg-color-1));
 }
 .gallery {
   background: rgb(var(--bg-color-2));
-  padding: 0 11px;
 }
 @font-face {
   font-family: "flecha";
