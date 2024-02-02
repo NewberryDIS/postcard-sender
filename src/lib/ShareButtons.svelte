@@ -1,4 +1,5 @@
 <script>
+export let left
     import { base } from '$app/paths'
     import EmailIcon from '$icons/envelope-icon.svelte'
     import HyperlinkIcon from '$icons/hyperlink-icon.svelte'
@@ -8,7 +9,7 @@
     import QuIconn from '$icons/quinn-icon.svelte'
 </script>
 
-<div class="st-custom-buttons">
+<div class="st-custom-buttons {left ? 'left' : ''}">
     <button data-network="email" class="st-custom-button">
         <span class="icon">
             <EmailIcon />
@@ -45,8 +46,16 @@
     <!-- </button> -->
 </div>
 <style>
-
-
+.left {
+    box-shadow: 0 0 10px 10px rgba(var(--bg-color-1), 0.22);
+    border: 1px solid rgb(var(--fg-color-2));
+    padding: 25px;
+    margin: 11px 25px !important;
+    border-radius: 11px;
+}
+.left .st-custom-button {
+    border: 1px solid rgb(var(--fg-color-2)) !important;
+}
     h1 {
         font-size: min(5vh, 7vw);
         /* margin-block: 0.5rem; */
@@ -91,7 +100,7 @@
     }
 
     .st-custom-buttons {
-        margin: 50px auto;
+        margin: 20px auto;
     }
 
     .st-custom-buttons a {

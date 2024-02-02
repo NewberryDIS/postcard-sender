@@ -16,10 +16,6 @@
         <NewberryDCLogo />
     </div>
     <div class="content">
-        <header>
-            <h1>Newberry Postcard Sender</h1>
-            <p>Greet a friend with a vintage postcard image from the Newberry's collection</p>
-        </header>
         <section>
             <img src="{imgUrl(data.itemData.image, 'large')}" class="featured-image" alt=""/>
             <p class="caption">
@@ -62,7 +58,8 @@ font-size: clamp(1rem, 0.7413rem + 0.9199vw, 1.33rem);
     }
     .featured-image{
         object-fit: contain;
-        max-height: calc(90% - 60px);
+        /* max-height: calc(90% - 60px); */
+        flex: auto;
     }
     .caption {
         margin: 11px;
@@ -76,7 +73,7 @@ font-size: clamp(1rem, 0.7413rem + 0.9199vw, 1.33rem);
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: end;
         gap: 11px;
 
     }
@@ -100,5 +97,5 @@ font-size: clamp(1rem, 0.7413rem + 0.9199vw, 1.33rem);
         padding: 0;
         margin: 0;
     }
-
+header
 </style>

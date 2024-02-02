@@ -57,11 +57,11 @@ body:not(.dark) {
   color: rgb(var(--fg-color-1));
 }
 body.dark {
-	--splash-color: var(--lavender);
-	--bg-color-2: var(--sapphire);
-	--bg-color-1: var(--midnight);
-	--fg-color-2: var(--lavender);
-	--fg-color-1: var(--granite);
+  --splash-color: var(--lavender);
+  --bg-color-2: var(--sapphire);
+  --bg-color-1: var(--midnight);
+  --fg-color-2: var(--lavender);
+  --fg-color-1: var(--granite);
 }
 
 .content,
@@ -96,14 +96,17 @@ h1,
 h2 {
   font-family: "flecha";
   color: rgb(var(--splash-color));
+  color: rgb(var(--fg-color-2));
 }
 h3,
 h4,
 h5,
 h6,
-dt {
+dt,
+p b {
   font-family: "styrene";
   color: rgb(var(--splash-color));
+  color: rgb(var(--fg-color-2));
 }
 
 body,

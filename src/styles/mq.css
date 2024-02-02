@@ -42,7 +42,7 @@
     align-items: start;
   }
   .content {
-    padding: 100px 11px 11px 11px;
+    padding: 60px 11px 0 11px;
   }
   .gallery {
     max-height: 100vh;
@@ -56,8 +56,8 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1500px) {
   .gallery {
-    flex-basis: 450px;
-    width: 450px;
+    flex-basis: 350px;
+    width: 350px;
   }
   .content {
     flex: 1;
