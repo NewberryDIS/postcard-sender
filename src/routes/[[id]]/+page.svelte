@@ -42,6 +42,7 @@
         position: absolute;
         top: 11px;
         left: 11px;
+        z-index: 9001;
     }
     h1, p {
         margin: 0;

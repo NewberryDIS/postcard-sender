@@ -42,6 +42,7 @@ def process_gallery_data(gallery, gallery_api_data):
 
 # when a librarian adds a canvas instead of a manifest, it is used anyway; 
 # in a world where we worried about data redundancy, we would use the `Document.RepresentativeIdentfier` in the getMEI url, then redo
+# however, one postcard can be in many galleries, so reducing data redundancy would involve creating a SQL lookup table, so are we actually saving "space"?
 def process_postcard_data(postcard, postcard_api_data):
     if postcard_api_data['APIResponse']['CoreField.IIIFResourceType'] == 'Canvas': 
         postcard.update({
@@ -76,7 +77,7 @@ package_extractor = [
 #     "https://collections.newberry.org//API/search/v3.0/search?query=SystemIdentifier:","&fields=MediaEncryptedIdentifier,MaxWidth,MaxHeight"
 # ]
 
-token = os.getenv('CTX_API_TOKEN')  # Load API token from environment variable
+token = os.getenv('CTX_API_TOKEN')  
 all_gallery_mei = "2KXJ8ZSA9MFDO"
 api_data_top_level = fetch_data(all_gallery_mei)
 
@@ -88,8 +89,6 @@ for gallery in _all_galleries:
     process_gallery_data(gallery, gallery_api_data)
 
     for postcard in gallery['postcards']:
-        # if postcard['CoreField.IIIFResourceType'] == 'Canvas': 
-        #     if po
         postcard_mei = postcard['mei']
         postcard_api_data = fetch_data(postcard_mei)
         process_postcard_data(postcard, postcard_api_data)

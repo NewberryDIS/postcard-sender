@@ -14,7 +14,11 @@
     }
     $: ({postcards, galleryData} = updatedData ) 
 </script>
-    <p class="more-label">Send another!</p>
+<div class="more-label">
+<p><b>Send another!</b></p>
+<p>Select an image below, or choose another category from the drop-down menu</p>
+</div>
+
 <div class="dropdown">
     <div class="selected"><span>{galleryData.title}<Arrow /></span></div>
     <ul>
@@ -59,8 +63,11 @@
     </MasonryGrid>
 <style>
     .more-label {
-        text-align: center;
-        margin: 6px auto 0 auto;
+        text-align: left;
+        margin: 6px 13px;
+    }
+    .more-label p {
+        margin: 0;
     }
     .dropdown li {
         height: 0px;
