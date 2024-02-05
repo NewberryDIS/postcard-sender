@@ -1,0 +1,154 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body,
+body * {
+  box-sizing: border-box;
+}
+html {
+  --flame: 241, 97, 81;
+  --park-green: 32, 84, 62;
+  --tile: 146, 88, 64;
+  --sapphire: 64, 81, 163;
+  --lake: 126, 196, 226;
+  --mulberry: 173, 43, 90;
+  --lavender: 205, 184, 209;
+  --midnight: 17, 26, 42;
+  --granite: 234, 235, 231;
+  --sand: 234, 220, 201;
+  --angle: 70deg;
+  --dist: 66%;
+
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+  --xxl: 1536px;
+}
+
+/*  dm on */
+:root {
+  /* --splash-color: var(--sapphire); */
+  /* --bg-color-1: var(--midnight); */
+  /* --bg-color-2: var(--mulberry); */
+  /* --fg-color-2: var(--lavender); */
+  /* --fg-color-1: var(--granite); */
+}
+body:not(.dark) {
+  --splash-color: var(--sapphire);
+  --fg-color-1: var(--midnight);
+  --fg-color-2: var(--mulberry);
+  --bg-color-2: var(--lavender);
+  --bg-color-1: var(--granite);
+  --bg-1: linear-gradient(
+    60deg,
+    rgb(var(--bg-color-1)) 0vw,
+    40vw,
+    rgb(var(--bg-color-2)) 40vw 100vw
+  );
+  --bg-2: linear-gradient(
+    60deg,
+    rgb(var(--bg-color-2)) 0vw,
+    40vw,
+    rgb(var(--bg-color-1)) 40vw 100vw
+  );
+  color: rgb(var(--fg-color-1));
+}
+body.dark {
+  --splash-color: var(--lavender);
+  --bg-color-2: var(--sapphire);
+  --bg-color-1: var(--midnight);
+  --fg-color-2: var(--lavender);
+  --fg-color-1: var(--granite);
+}
+
+body {
+  background: rgb(var(--bg-color-1));
+}
+.gallery {
+  background: rgb(var(--bg-color-2));
+}
+@font-face {
+  font-family: "flecha";
+  src: url("/fonts/FlechaM-Regular.woff");
+}
+@font-face {
+  font-family: "styrene";
+  src: url("/fonts/StyreneB-Regular-Web.woff");
+}
+@font-face {
+  font-family: "styrene-bold";
+  src: url("/fonts/StyreneB-Bold-Web.woff");
+}
+@font-face {
+  font-family: "signifier";
+  src: url("/fonts/signifier-regular.woff2");
+}
+@font-face {
+  font-family: "signifier-bold";
+  src: url("/fonts/signifier-bold.woff2");
+}
+
+h1,
+h2 {
+  font-family: "flecha";
+  color: rgb(var(--splash-color));
+  color: rgb(var(--fg-color-2));
+}
+h3,
+h4,
+h5,
+h6,
+dt,
+p b {
+  font-family: "styrene";
+  color: rgb(var(--splash-color));
+  color: rgb(var(--fg-color-2));
+}
+
+body,
+html {
+  font-family: "signifier";
+  color: rgb(var(--fg-color-1));
+}
+
+a {
+  color: rgb(var(--fg-color-2));
+}
+b {
+  font-family: "styrene-bold";
+}
+
+.llines {
+  color: inherit !important;
+  font-weight: 700;
+  line-height: 1rem;
+  text-decoration: none;
+  background: linear-gradient(
+      to right,
+      rgba(var(--fg-color-1), 0.3),
+      rgba(var(--fg-color-1), 0.3)
+    ),
+    linear-gradient(
+      to right,
+      rgba(var(--fg-color-1), 1),
+      rgba(var(--fg-color-1), 1)
+    );
+  background-size:
+    100% 0.1rem,
+    0 0.1rem;
+  background-position:
+    100% 100%,
+    0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms;
+}
+
+.llines:hover,
+.llines:focus {
+  background-size:
+    0 0.1rem,
+    100% 0.1rem;
+}

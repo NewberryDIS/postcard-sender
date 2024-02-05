@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev --host",
+    "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
     "test": "npm run test:integration && npm run test:unit",
@@ -12,13 +12,11 @@
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
     "test:integration": "playwright test",
-    "test:unit": "vitest",
-    "postinstall": "prisma generate"
+    "test:unit": "vitest"
   },
   "devDependencies": {
     "@playwright/test": "^1.28.1",
     "@sveltejs/adapter-auto": "^3.0.0",
-    "@sveltejs/adapter-vercel": "^4.0.5",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@types/eslint": "8.56.0",
@@ -38,11 +36,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@egjs/svelte-grid": "^1.15.0",
-    "@prisma/client": "latest",
-    "@sveltejs/adapter-node": "^4.0.1",
-    "@sveltejs/adapter-static": "^3.0.1",
-    "@vercel/kv": "^1.0.1",
-    "prisma": "latest"
+    "@egjs/svelte-grid": "^1.15.0"
   }
 }

@@ -1,3 +1,7 @@
+import { writable } from 'svelte/store'
+
+export const activeGallery = writable('')
+
 export const slugs = [["bicycling", "Bicycling"],
 	["chicago", "Chicago"],
 	["dogs", "Dogs"],

@@ -1,4 +1,4 @@
-class CustomComponent extends HTMLElement {
+class DarkModeToggle extends HTMLElement {
     constructor() {
         super();
 
@@ -123,4 +123,4 @@ class CustomComponent extends HTMLElement {
 
 }
 
-customElements.define('dark-mode-toggle', CustomComponent);
+customElements.define('dark-mode-toggle', DarkModeToggle);

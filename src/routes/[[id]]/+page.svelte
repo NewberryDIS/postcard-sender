@@ -1,100 +1,67 @@
 <script lang="ts">
-
-export let data
-// console.log(data.postcards)
-import {base} from '$app/paths'
-import { imgUrl } from '$lib'
-import NewberryDCLogo from "$lib/NewberryDCLogo.svelte" 
-import Gallery from "$lib/Gallery.svelte" 
-import ShareButtons from "$lib/ShareButtons.svelte" 
+  import allPostcards from '$lib/postcards.json'
+  import allGalleries from '$lib/galleries.json'
+  import { page } from '$app/stores'
+  import { imgUrl, activeGallery } from '$lib'
+  import Gallery from '$comps/Gallery.svelte'
+  import Dropdown from '$comps/Dropdown.svelte'
+  import ShareButtons from '$comps/ShareButtons.svelte'
+  
+  let printableData = ""
+  $: id = $page.params.id ||  "2KXJ8ZSRY0U_H"
+  // printableData = postcards
+  $: featuredPostcard = allPostcards.filter(f => f.mei === id || f.image === id).pop() || {
+    "gallery": "valentines-day",
+    "title": "Valentine greetings",
+    "mei": "2KXJ8ZSRY0U_H",
+    "image": "2KXJ8ZSS7IHVQ",
+    "imageTitle": "Valentine greetings",
+    "width": "2790",
+    "height": "4295"
+  }
+  $: $activeGallery = featuredPostcard.gallery
+  $: postcards = allPostcards.filter(f => f.gallery === $activeGallery)
+  $: printableData = allPostcards.filter(f => {
+    if ( f.mei === id ){
+    console.log("f.mei",f.mei)
+      return true
+    }
+    return f.mei === id
+  })
+  $: currentGallery = allGalleries.filter(f => f.slug === $activeGallery).pop()
+  $: console.log("printableData",printableData)
+  $: console.log("featuredPostcard",featuredPostcard)
+  $: console.log("$activeGallery",$activeGallery)
+  $: console.log("postcards",postcards)
+  $: console.log("currentGallery",currentGallery)
 </script>
 
-<svelte:head><title>Newberry Postcards</title></svelte:head>
-
 <main>
-    <div class="logo-wrapper">
-        <NewberryDCLogo />
-    </div>
     <div class="content">
         <section>
-            <img src="{imgUrl(data.itemData.image, 'large')}" class="featured-image" alt=""/>
+            <img src="{imgUrl(featuredPostcard.image, 'large')}" class="featured-image" alt=""/>
             <p class="caption">
-                {data.itemData.imageTitle}
+                {featuredPostcard.imageTitle}
             </p>
         </section>
         <section>
             <ShareButtons />
         </section>
         <dark-mode-toggle></dark-mode-toggle>
-        <!-- <img src="{base}/webp/{data.itemData.image}.webp" alt="" /> -->
     </div>
     <div class="gallery">
-        <Gallery { data } />
+      
+<header>
+    <h1>Newberry Postcard Sender</h1>
+    <p>Greet a friend with a vintage postcard image from the Newberry's digital collections</p>
+</header>
+<div class="more-label">
+    <p><b>Send another!</b></p>
+    <p>Select an image below, or choose a category from the drop-down menu</p>
+</div>
+  <Dropdown galleryData={ currentGallery } />
+  <Gallery { postcards } />
     </div>
 </main>
+    <pre>{JSON.stringify(printableData, null, 2)}</pre>
 
-<style>
-.logo-wrapper {
-    position: absolute;
-    top: 11px;
-    left: 11px;
-    z-index: 9001;
-}
-h1, p {
-    margin: 0;
-    text-align: center;
-}
-h1 {
-    max-width: calc(100vw - 100px);
-    font-size: clamp(2rem, 0.4321rem + 5.5749vw, 4rem);
-}
-p {
-    font-size: clamp(1rem, 0.7413rem + 0.9199vw, 1.33rem);
-}
-main {
-    display: flex;
-    gap: 11px;
-
-}
-.featured-image{
-    object-fit: contain;
-    /* max-height: calc(90% - 60px); */
-    flex: auto;
-}
-.caption {
-    margin: 11px;
-}
-.content {
-    position: relative;
-    flex: 1;
-    min-width: 0;
-    min-height: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    gap: 11px;
-
-}
-section, header {
-    min-width: 0;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-section :is(img, p) {
-    min-width: 0;
-    min-height: 0;
-} 
-section {
-    text-align: center;
-    /* max-width: 90%; */
-}
-section p {
-    padding: 0;
-    margin: 0;
-}
-</style>
