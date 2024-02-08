@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store'
 
 export const activeGallery = writable('')
+export const showImage = writable(false)
 
 export const slugs = [["bicycling", "Bicycling"],
 	["chicago", "Chicago"],

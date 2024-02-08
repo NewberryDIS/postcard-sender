@@ -28,9 +28,20 @@ class DarkModeToggle extends HTMLElement {
         style.textContent = `
             :host {
                 position: absolute;
+z-index: 9001;
+            }
+@media screen and (max-width: 1023px) {
+:host {
+top: 20px;
+right: 20px;
+}
+}
+@media screen and (min-width: 1024px) {
+:host {
                 bottom: 20px;
                 left: 20px;
-            }
+}
+}
             #mode-switch {
                 background: none;
                 border: 0;

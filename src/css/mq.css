@@ -16,6 +16,9 @@
   }
 }
 @media screen and (max-width: 1023px) {
+  .gallery header { display: none;}
+  .content header { display: flex;}
+
   main {
     flex-direction: column;
   }
@@ -30,6 +33,8 @@
 /* @media screen and (min-width 601px) and (max-width: 1023px){} */
 /* @media screen and (min-width 1024px) and (max-width: 1500px){} */
 @media screen and (min-width: 1024px) {
+  .gallery header { display: flex;}
+  .content header { display: none;}
   main,
   .content {
     max-height: 100vh;
@@ -56,8 +61,8 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1500px) {
   .gallery {
-    flex-basis: 350px;
-    width: 350px;
+    flex-basis: 500px;
+    width: 500px;
   }
   .content {
     flex: 1;

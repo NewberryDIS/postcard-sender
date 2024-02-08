@@ -1,12 +1,21 @@
 
 <script>
+    import { showImage } from '$lib'
 import { MasonryGrid } from "@egjs/svelte-grid";
   import { base } from '$app/paths'
+  import { afterNavigate, beforeNavigate } from '$app/navigation'
   export let postcards
 
   const gap = 5;
   const align = "center";
   const defaultDirection = "end" 
+
+afterNavigate(() => {
+    $showImage = true 
+  })
+beforeNavigate(() => {
+    $showImage = false
+  })
 </script>
 <MasonryGrid
     { defaultDirection }
