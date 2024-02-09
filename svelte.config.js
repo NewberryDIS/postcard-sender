@@ -6,8 +6,8 @@ const config = {
     preprocess: vitePreprocess(),
     kit: {
         paths: {
-            base: '/pose'
-            // base: '/postcard-sender'
+            // base: '/pose'
+            base: '/postcard-sender'
         },
         alias: {
             $css: './src/css',

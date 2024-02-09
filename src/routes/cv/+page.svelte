@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Gatsby 4.9.2" />
+  <style data-href="/styles.f8d7dc5fd68141c4d9f7.css" data-identity="gatsby-global-css">
+    body,
+    html {
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      --bg: #eaebe7;
+      --bgTwo: #c8cac9;
+      --textNormal: #111a2a;
+      --textTitle: #2d3542;
+      --textLink: #6c71c4;
+      --hr: rgba(0, 0, 0, .5);
+      --fontSerif: "Bembo W01", "Cardo", serif;
+      --fontNoSerif: "Basic Commercial W01", Helvetica, sans-serif;
+      background-color: var(--bg)
+    }
+
+    body.dark {
+      -webkit-font-smoothing: antialiased;
+      --bg: #111a2a;
+      --bgTwo: #2d3542;
+      --textNormal: #eaebe7;
+      --textTitle: #c8cac9;
+      --textLink: #6c71c4
+    }
+
+    .lbmodal {
+      background-color: var(--hr);
+      height: 100%;
+      left: 0;
+      overflow: auto;
+      position: fixed;
+      text-align: center;
+      top: 0;
+      width: 100%;
+      z-index: 101
+    }
+
+    .lbmodal a {
+      background: #fff;
+      border: 1px solid #000;
+      bottom: 10px;
+      left: 30%;
+      margin: auto;
+      position: absolute;
+      text-align: center;
+      width: 40%
+    }
+
+    .lbimage {
+      height: 90vh;
+      margin: auto;
+      -o-object-fit: contain;
+      object-fit: contain;
+      position: relative;
+      width: 90vw
+    }
+
+    .pgcv .datelist {
+      width: 100%
+    }
+
+    .pgcv .datelist tr {
+      display: flex
+    }
+
+    .pgcv .date {
+      flex-basis: 10ch
+    }
+
+    .pgcv .item {
+      flex: 1 1
+    }
+
+    .pgcv ul {
+      padding-left: 0
+    }
+
+    .pgcv li {
+      list-style-type: none;
+      padding-left: 5ch;
+      text-indent: -5ch
+    }
+
+    .pgcv .fakeh3 {
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0;
+      -webkit-margin-end: 0;
+      font-size: 1.17em;
+      font-weight: 700;
+      margin-block-end: 1em;
+      margin-block-start: 1em;
+      margin-inline-end: 0;
+      margin-inline-start: 0
+    }
+
+    .comment-icons img:last-child {
+      display: none
+    }
+
+    .comment-icons:hover img:last-child {
+      display: inline-block
+    }
+
+    .comment-icons:hover img:first-child {
+      display: none
+    }
+
+    img[src$="#cmtico"],
+    img[src$="#cmtico-one"],
+    img[src$="#cmtico-two"] {
+      vertical-align: sub;
+      width: 22px
+    }
+
+    .lbimage {
+      transition: .2s
+    }
+  </style>
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+  <script data-gatsby="web-vitals-polyfill">
+    ! function () {
+      var e, t, n, i, r = {
+          passive: !0,
+          capture: !0
+        },
+        a = new Date,
+        o = function () {
+          i = [], t = -1, e = null, f(addEventListener)
+        },
+        c = function (i, r) {
+          e || (e = r, t = i, n = new Date, f(removeEventListener), u())
+        },
+        u = function () {
+          if (t >= 0 && t < n - a) {
+            var r = {
+              entryType: "first-input",
+              name: e.type,
+              target: e.target,
+              cancelable: e.cancelable,
+              startTime: e.timeStamp,
+              processingStart: e.timeStamp + t
+            };
+            i.forEach((function (e) {
+              e(r)
+            })), i = []
+          }
+        },
+        s = function (e) {
+          if (e.cancelable) {
+            var t = (e.timeStamp > 1e12 ? new Date : performance.now()) - e.timeStamp;
+            "pointerdown" == e.type ? function (e, t) {
+              var n = function () {
+                  c(e, t), a()
+                },
+                i = function () {
+                  a()
+                },
+                a = function () {
+                  removeEventListener("pointerup", n, r), removeEventListener("pointercancel", i, r)
+                };
+              addEventListener("pointerup", n, r), addEventListener("pointercancel", i, r)
+            }(t, e) : c(t, e)
+          }
+        },
+        f = function (e) {
+          ["mousedown", "keydown", "touchstart", "pointerdown"].forEach((function (t) {
+            return e(t, s, r)
+          }))
+        },
+        p = "hidden" === document.visibilityState ? 0 : 1 / 0;
+      addEventListener("visibilitychange", (function e(t) {
+        "hidden" === document.visibilityState && (p = t.timeStamp, removeEventListener("visibilitychange", e, !0))
+      }), !0);
+      o(), self.webVitals = {
+        firstInputPolyfill: function (e) {
+          i.push(e), u()
+        },
+        resetFirstInputPolyfill: o,
+        get firstHiddenTime() {
+          return p
+        }
+      }
+    }();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+  <style>
+    .gatsby-image-wrapper {
+      position: relative;
+      overflow: hidden
+    }
+
+    .gatsby-image-wrapper picture.object-fit-polyfill {
+      position: static !important
+    }
+
+    .gatsby-image-wrapper img {
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      margin: 0;
+      max-width: none;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      object-fit: cover
+    }
+
+    .gatsby-image-wrapper [data-main-image] {
+      opacity: 0;
+      transform: translateZ(0);
+      transition: opacity .25s linear;
+      will-change: opacity
+    }
+
+    .gatsby-image-wrapper-constrained {
+      display: inline-block;
+      vertical-align: top
+    }
+  </style><noscript>
+    <style>
+      .gatsby-image-wrapper noscript [data-main-image] {
+        opacity: 1 !important
+      }
+
+      .gatsby-image-wrapper [data-placeholder-image] {
+        opacity: 0 !important
+      }
+    </style>
+  </noscript>
+  <script type="module">
+    const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);
+  </script>
+  <title data-react-helmet="true">Humanism For Sale</title>
+  <link data-react-helmet="true" rel="stylesheet"
+    href="//fast.fonts.net/cssapi/fc8f8385-7e78-4c4b-a85e-9fa8bb57a66a.css" />
+  <script data-react-helmet="true" src="/extras.js"></script>
+  <script data-react-helmet="true" src="/hfsgatsby/extras.js"></script>
+  <link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml" />
+  <link rel="icon" href="/favicon-32x32.png?v=c27c30609b3f6cd58e6e2b80b05f4680" type="image/png" />
+  <link rel="icon" href="/favicon.svg?v=c27c30609b3f6cd58e6e2b80b05f4680" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous" />
+  <link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=c27c30609b3f6cd58e6e2b80b05f4680" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=c27c30609b3f6cd58e6e2b80b05f4680" />
+  <link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=c27c30609b3f6cd58e6e2b80b05f4680" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=c27c30609b3f6cd58e6e2b80b05f4680" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=c27c30609b3f6cd58e6e2b80b05f4680" />
+  <link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=c27c30609b3f6cd58e6e2b80b05f4680" />
+  <link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=c27c30609b3f6cd58e6e2b80b05f4680" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=c27c30609b3f6cd58e6e2b80b05f4680" />
+  <link as="script" rel="preload" href="/webpack-runtime-5c9372066c9833b17b9b.js" />
+  <link as="script" rel="preload" href="/framework-c53bdae0511f068d8611.js" />
+  <link as="script" rel="preload" href="/app-14a92cd851ad888395df.js" />
+  <link as="script" rel="preload" href="/4b58679c93aa390a5fba288d8a31495fb6cab398-ac5473d8acce3fc74da9.js" />
+  <link as="script" rel="preload"
+    href="/component---src-pages-markdown-remark-frontmatter-slug-js-d3d1122bb30dcb098ea5.js" />
+  <link as="fetch" rel="preload" href="/page-data/cv/page-data.json" crossorigin="anonymous" />
+  <link as="fetch" rel="preload" href="/page-data/sq/d/4191026804.json" crossorigin="anonymous" />
+  <link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous" />
+</head>
+
+<body>
+  <script>
+    void
+    function () {
+      window.__onThemeChange = function () {}
+
+      var preferredTheme
+      try {
+        preferredTheme = localStorage.getItem('theme')
+      } catch (err) {}
+
+      function setTheme(newTheme) {
+        if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+          document.body.classList.replace(preferredTheme, newTheme)
+        } else {
+          document.body.classList.add(newTheme)
+        }
+
+        window.__theme = newTheme
+        preferredTheme = newTheme
+        window.__onThemeChange(newTheme)
+      }
+
+      window.__setPreferredTheme = function (newTheme) {
+        setTheme(newTheme)
+        try {
+          localStorage.setItem('theme', newTheme)
+        } catch (err) {}
+      }
+
+      var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      darkQuery.addListener(function (e) {
+        window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+      })
+
+      setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+    }()
+  </script>
+  <div id="___gatsby">
+    <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
+      <style data-emotion="css w1atvp">
+        .css-w1atvp {
+          padding: 0;
+          margin: 0;
+          position: relative;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-align-content: space-between;
+          -ms-flex-line-pack: space-between;
+          align-content: space-between;
+          font-size: 20px;
+          line-height: 32px;
+          font-family: var(--fontNoSerif);
+          color: var(--textNormal);
+          background-color: var(--bg);
+        }
+
+        .css-w1atvp h1,
+        .css-w1atvp h2 {
+          padding: 2px;
+          font-family: var(--fontSerif);
+        }
+
+        .css-w1atvp h1 p,
+        .css-w1atvp h2 p {
+          text-align: center;
+          margin: 0 10%;
+          padding: 0;
+        }
+
+        .css-w1atvp h2 {
+          color: var(--textNormal);
+          border: 1px solid var(--textNormal);
+          background: var(--bgTwo);
+        }
+
+        .css-w1atvp a {
+          color: var(--textTitle);
+        }
+
+        .css-w1atvp .next-page,
+        .css-w1atvp .previous-page {
+          background: var(--bg);
+        }
+
+        .css-w1atvp .mkdn-figure,
+        .css-w1atvp .next-page,
+        .css-w1atvp .previous-page {
+          cursor: pointer;
+          border: 1px solid var(--textNormal);
+        }
+
+        .css-w1atvp .mkdn-figure:hover,
+        .css-w1atvp .next-page:hover,
+        .css-w1atvp .previous-page:hover {
+          box-shadow: 0 4px 8px 0 rgba(17, 26, 42, 0.5);
+        }
+
+        .css-w1atvp .previous-page,
+        .css-w1atvp .next-page {
+          border: 1px solid rgba(17, 26, 42, 0.5);
+        }
+
+        .css-w1atvp .middle {
+          position: relative;
+          height: 99.75vh;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+        }
+
+        .css-w1atvp .middle .main {
+          padding-top: 10vh;
+          overflow-y: auto;
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          top: 0;
+          bottom: 0;
+          position: relative;
+          padding: 0 15vw 0 5vw;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+        }
+
+        .css-w1atvp .middle .main .text-content {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          margin: 2vh 2vw;
+          padding: 2vh 2vw;
+        }
+
+        .css-w1atvp .middle .main a {
+          font-weight: bold;
+        }
+
+        .css-w1atvp .middle .sidebar {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+          -webkit-align-items: stretch;
+          -webkit-box-align: stretch;
+          -ms-flex-align: stretch;
+          align-items: stretch;
+          height: 100%;
+          width: 25vw;
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+          padding: 1px;
+          border-right: 1px solid var(--textNormal);
+          background: var(--bgTwo);
+        }
+
+        .css-w1atvp .middle .sidebar details,
+        .css-w1atvp .middle .sidebar summary,
+        .css-w1atvp .middle .sidebar ul,
+        .css-w1atvp .middle .sidebar li,
+        .css-w1atvp .middle .sidebar a {
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .css-w1atvp .middle .sidebar .homelink-wrapper {
+          -webkit-flex-basis: 4vh;
+          -ms-flex-preferred-size: 4vh;
+          flex-basis: 4vh;
+        }
+
+        .css-w1atvp .middle .sidebar .tree-nav {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          overflow-y: auto;
+        }
+
+        .css-w1atvp .middle .sidebar .homelink h1 {
+          margin: 2px;
+          color: var(--fontTitle);
+          border: 1px solid var(--textTitle);
+          text-align: center;
+          -webkit-transition: 0.2s;
+          transition: 0.2s;
+        }
+
+        .css-w1atvp .middle .sidebar .homelink:hover {
+          -webkit-text-decoration: none;
+          text-decoration: none;
+        }
+
+        .css-w1atvp .middle .sidebar .homelink:hover h1 {
+          border: 1px solid var(--textNormal);
+          color: var(--textNormal);
+        }
+
+        .css-w1atvp .pager {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-content: center;
+          -ms-flex-line-pack: center;
+          align-content: center;
+          position: -webkit-sticky;
+          position: sticky;
+          bottom: 0;
+        }
+
+        .css-w1atvp .previous-page,
+        .css-w1atvp .next-page {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          text-align: center;
+          border: 1px solid var(--textNormal);
+          margin: 5px;
+          padding: 5px;
+          -webkit-transition: 0.2s;
+          transition: 0.2s;
+        }
+
+        .css-w1atvp .comments {
+          border: 1px solid var(--textNormal);
+          margin: 3px 10px;
+          padding: 5px;
+          font-size: 0.85rem;
+        }
+
+        .css-w1atvp .grey-text {
+          opacity: 50%;
+          -webkit-transition: 0.1s;
+          transition: 0.1s;
+        }
+
+        .css-w1atvp .grey-text:hover {
+          opacity: 20%;
+        }
+
+        .css-w1atvp .pageList,
+        .css-w1atvp .initLink {
+          list-style-type: none;
+        }
+
+        .css-w1atvp .initLink {
+          padding: 0;
+        }
+
+        .css-w1atvp .page-title {
+          -webkit-flex-basis: 50vw;
+          -ms-flex-preferred-size: 50vw;
+          flex-basis: 50vw;
+        }
+
+        .css-w1atvp .mkdn-figure {
+          width: 20vw;
+          margin: 5vh auto;
+          -webkit-transition: 0.3s;
+          transition: 0.3s;
+        }
+
+        .css-w1atvp .mkdn-image {
+          max-width: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .css-w1atvp .mkdn-figcaption {
+          text-align: center;
+          padding: 0 1vh 1vw 1vh;
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        .css-w1atvp a {
+          -webkit-text-decoration: none;
+          text-decoration: none;
+        }
+
+        .css-w1atvp a:hover {
+          -webkit-text-decoration: underline;
+          text-decoration: underline;
+        }
+
+        .css-w1atvp #comments-button {
+          position: fixed;
+          bottom: 19px;
+          right: 70px;
+          cursor: pointer;
+          background: transparent;
+          width: 32px;
+          height: 32px;
+          color: blue;
+          -webkit-transition: 0.2s;
+          transition: 0.2s;
+        }
+
+        .css-w1atvp #comments-button:hover {
+          -webkit-filter: drop-shadow(0 0 5px var(--textNormal);
+          }
+        }
+
+        #comments-section {
+          padding-top: 100px;
+          margin-top: -100px;
+        }
+
+        .main ul {
+          list-style-type: none;
+          padding-left: 0;
+
+          > li {
+            padding: 5px 0;
+          }
+        }
+
+        ;
+        }
+        }
+        }
+
+        ; filter:drop-shadow(0 0 5px var(--textNormal);
+        }
+        }
+
+        #comments-section {
+          padding-top: 100px;
+          margin-top: -100px;
+        }
+
+        .main ul {
+          list-style-type: none;
+          padding-left: 0;
+
+          > li {
+            padding: 5px 0;
+          }
+        }
+
+        ;
+        }
+        }
+        }
+
+        ;
+        }
+      </style>
+      <div id="toplevel" class="css-w1atvp erksk810">
+        <div class="middle">
+          <div class="sidebar">
+            <div class="homelink-wrapper"><a class="homelink" href="/">
+                <h1>
+                  <p class="title-top">Humanism</p>
+                  <p class="title-bottom">For Sale</p>
+                </h1>
+              </a></div>
+            <style data-emotion="css 125j11g">
+              .css-125j11g {
+                -webkit-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                margin-left: 1vw;
+                font-size: 16px;
+              }
+
+              .css-125j11g summary,
+              .css-125j11g li {
+                cursor: pointer;
+              }
+
+              .css-125j11g summary {
+                display: block;
+                cursor: pointer;
+              }
+
+              .css-125j11g summary::-webkit-details-marker {
+                display: none;
+              }
+
+              .css-125j11g .underline {
+                -webkit-text-decoration: underline;
+                text-decoration: underline;
+              }
+
+              .css-125j11g .tree-nav__item {
+                display: block;
+                white-space: nowrap;
+                position: relative;
+              }
+
+              .css-125j11g .tree-nav__item .tree-nav__item {
+                margin-left: 1vw;
+              }
+
+              .css-125j11g .tree-nav__item-title {
+                cursor: pointer;
+                display: block;
+                outline: 0;
+              }
+
+              .css-125j11g a {
+                font-weight: normal;
+                padding: 0 0 0 15px;
+              }
+
+              .css-125j11g ul {
+                margin: 0 0 0 1vw;
+                -webkit-padding-start: 0;
+                padding-inline-start: 0;
+              }
+            </style>
+            <div class="tree-nav css-125j11g e1acce6p0">
+              <nav class="">
+                <ul class="initLink">
+                  <li id="textone" class="initLink"><a class="" href="/text/000">Read the Book</a></li>
+                  <li id="abt" class="initLink"><a href="/abt">About the Book</a></li>
+                  <li id="ct" class="initLink"><a href="/ct">Citing Humanism For Sale</a></li>
+                  <li id="ps" class="initLink"><a href="/ps">Personal Statement</a></li>
+                  <li id="cont" class="initLink"><a href="/cont">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+            <style data-emotion="css 1e4ydoo">
+              .css-1e4ydoo {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-align-items: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+              }
+
+              .css-1e4ydoo .search-textbox {
+                margin: 0 1px 0 2px;
+                height: 30px;
+                -webkit-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                padding-left: 5px;
+                background: var(--bg);
+                color: var(--textNormal);
+              }
+
+              .css-1e4ydoo .search-icon {
+                fill: var(--textNormal);
+                height: 30px;
+                width: 30px;
+                margin: 0 2px 0 1px;
+                -webkit-flex-basis: 30px;
+                -ms-flex-preferred-size: 30px;
+                flex-basis: 30px;
+                width: 100%;
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+              }
+
+              .css-1e4ydoo .search-icon:hover {
+                fill: var(--textTitle);
+                opacity: 0.8;
+              }
+
+              .css-1e4ydoo .search-icon:active {
+                fill: var(--bg);
+              }
+            </style>
+            <div class="css-1e4ydoo e1nnbxeq0"><input type="text" class="search-textbox" name="query"
+                placeholder="Search the book..." /><svg xmlns="http://www.w3.org/2000/svg" class="search-icon" x="0px"
+                y="0px" viewBox="0 0 100 100">
+                <path
+                  d="M50,5C25.1,5,5,25.1,5,50c0,24.9,20.1,45,45,45c24.9,0,45-20.1,45-45C95,25.1,74.9,5,50,5L50,5z M39.5,54.8  c7.8,0,14.2-6.4,14.2-14.2c0-7.9-6.4-14.2-14.2-14.2c-7.9,0-14.2,6.3-14.2,14.2C25.3,48.4,31.6,54.8,39.5,54.8L39.5,54.8z   M39.5,21.9c10.3,0,18.7,8.4,18.7,18.7c0,3.8-1.2,7.3-3.1,10.3l18.5,18.5c1.5,1.5,1.5,3.8,0,5.3c-1.5,1.5-3.8,1.5-5.3,0  c-0.3-0.3-18.5-18.5-18.5-18.5c-3,2-6.6,3.1-10.3,3.1c-10.3,0-18.7-8.4-18.7-18.7C20.8,30.3,29.2,21.9,39.5,21.9z">
+                </path>
+              </svg></div>
+            <style data-emotion="css 9xfd34">
+              .css-9xfd34 {
+                -webkit-flex-basis: 5vh;
+                -ms-flex-preferred-size: 5vh;
+                flex-basis: 5vh;
+                background: var(--bgTwo);
+                margin: 2px;
+                border: 1px solid var(--textTitle);
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: space-evenly;
+                -ms-flex-pack: space-evenly;
+                -webkit-justify-content: space-evenly;
+                justify-content: space-evenly;
+                -webkit-align-items: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+              }
+
+              .css-9xfd34 a {
+                -webkit-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                width: 100%;
+                height: 100%;
+              }
+
+              .css-9xfd34 svg {
+                width: 100%;
+                height: 5vh;
+                margin: 1vh auto 0 auto;
+              }
+
+              .css-9xfd34 a svg {
+                -webkit-transition: 0.2s;
+                transition: 0.2s;
+                fill: var(--textTitle);
+              }
+
+              .css-9xfd34 a:hover svg {
+                fill: var(--textNormal);
+              }
+            </style>
+            <div class="nogo-wrapper css-9xfd34 eooaii90"><a href="https://www.newberry.org" target="_blank"><svg
+                  class="nogo" version="1.0" viewBox="0 0 619 125" preserveAspectRatio="xMidYMid meet">
+                  <g transform="translate(0.000000,125.000000) scale(0.100000,-0.100000)" stroke="none">
+                    <path
+                      d="M610 1155 l-155 -94 -5 69 -5 69 -222 -126 -223 -125 0 -474 0 -474 225 0 225 0 0 488 0 487 75 43 75 44 75 -47 75 -47 0 -484 0 -484 183 0 182 1 100 94 100 95 -57 0 -58 0 -2 392 -3 392 -210 137 c-116 76 -212 138 -215 138 -3 1 -75 -42 -160 -94z">
+                    </path>
+                    <path
+                      d="M1590 750 l0 -40 65 0 65 0 0 -150 0 -150 45 0 45 0 0 150 0 150 65 0 65 0 0 40 0 40 -175 0 -175 0 0 -40z">
+                    </path>
+                    <path
+                      d="M1990 600 l0 -190 45 0 45 0 0 75 0 75 80 0 80 0 0 -75 0 -75 45 0 45 0 0 190 0 190 -45 0 -45 0 0 -75 0 -76 -77 3 -78 3 -3 73 -3 72 -44 0 -45 0 0 -190z">
+                    </path>
+                    <path
+                      d="M2420 600 l0 -190 155 0 155 0 0 40 0 40 -110 0 -110 0 0 35 0 35 75 0 75 0 0 40 0 40 -75 0 -75 0 0 35 0 35 100 0 100 0 0 40 0 40 -145 0 -145 0 0 -190z">
+                    </path>
+                    <path
+                      d="M2930 600 l0 -190 45 0 45 0 0 122 0 122 86 -122 c81 -116 87 -122 120 -122 l34 0 0 190 0 190 -40 0 -39 0 -3 -107 -3 -108 -73 108 -73 107 -50 0 -49 0 0 -190z">
+                    </path>
+                    <path
+                      d="M3360 600 l0 -190 155 0 155 0 0 40 0 40 -110 0 -110 0 0 35 0 35 70 0 70 0 0 40 0 40 -70 0 -70 0 0 35 0 35 100 0 100 0 0 40 0 40 -145 0 -145 0 0 -190z">
+                    </path>
+                    <path
+                      d="M3700 783 c0 -4 24 -89 53 -188 l53 -180 41 -3 42 -3 21 73 c12 40 26 90 32 111 6 20 14 37 17 37 3 0 20 -48 37 -108 l31 -107 44 -3 45 -3 48 173 c27 95 51 181 53 191 5 14 -2 17 -39 17 l-44 0 -29 -110 c-15 -61 -31 -108 -34 -105 -3 4 -20 52 -36 108 l-30 102 -41 3 -41 3 -28 -98 c-15 -54 -30 -104 -34 -111 -5 -8 -20 32 -37 95 l-29 108 -48 3 c-26 2 -47 -1 -47 -5z">
+                    </path>
+                    <path
+                      d="M4280 600 l0 -190 113 1 c140 0 176 11 200 61 22 45 16 86 -17 117 l-24 22 25 25 c21 21 24 32 20 61 -12 74 -55 93 -207 93 l-110 0 0 -190z m194 110 c18 -7 26 -17 26 -35 0 -29 -24 -38 -91 -33 -37 3 -44 7 -47 26 -6 40 5 52 47 52 22 0 51 -4 65 -10z m20 -153 c11 -8 17 -23 14 -38 -3 -23 -7 -24 -75 -27 l-73 -3 0 34 c0 18 3 37 7 40 12 12 109 7 127 -6z">
+                    </path>
+                    <path
+                      d="M4680 600 l0 -190 155 0 155 0 0 40 0 40 -110 0 -110 0 0 35 0 35 75 0 75 0 0 40 0 40 -75 0 -75 0 0 35 0 35 100 0 100 0 0 40 0 40 -145 0 -145 0 0 -190z">
+                    </path>
+                    <path
+                      d="M5060 600 l0 -190 40 0 39 0 3 78 3 77 35 0 c33 0 37 -4 80 -77 l45 -78 48 0 c26 0 47 2 47 4 0 2 -20 39 -45 82 l-44 79 23 12 c31 16 50 65 43 109 -12 75 -55 94 -207 94 l-110 0 0 -190z m220 91 c17 -34 -13 -52 -79 -49 -55 3 -56 3 -59 36 l-3 32 65 0 c54 0 67 -3 76 -19z">
+                    </path>
+                    <path
+                      d="M5460 600 l0 -190 45 0 45 0 0 80 0 80 34 0 c32 0 37 -5 80 -80 l47 -80 44 0 c25 0 45 3 45 6 0 4 -18 39 -40 79 l-40 73 30 30 c25 26 30 38 30 80 0 39 -5 54 -25 74 -32 32 -62 38 -191 38 l-104 0 0 -190z m223 88 c19 -30 -8 -48 -74 -48 l-59 0 0 35 0 36 61 -3 c45 -2 65 -8 72 -20z">
+                    </path>
+                    <path
+                      d="M5810 785 c0 -3 32 -53 70 -110 l70 -104 0 -81 0 -80 50 0 50 0 0 78 0 77 65 103 c36 57 65 108 65 113 0 5 -20 9 -45 9 -44 0 -45 -1 -88 -65 l-44 -66 -41 66 -41 65 -56 0 c-30 0 -55 -2 -55 -5z">
+                    </path>
+                  </g>
+                </svg></a></div>
+          </div>
+          <div class="main">
+            <div class="text-content" id="top">
+              <div class="scrollable-content">
+<style>
+  .cv-2-24 {
+  }
+  .cv-2-24 p:not(.para) {
+    margin-left: 64px;
+  text-indent: -64px;
+  }
+  td{ 
+    padding: 6px;
+  }
+  </style>
+                <div class="cv-2-24">
+<h2 id="curriculum-vitae">PAUL F. GEHL: Curriculum Vitae</h2>
+<h3 id="professional-titles">PROFESSIONAL TITLES:</h3>
+<table>
+  <tr>
+    <td>2016-</td>
+    <td>Curator Emeritus, The Newberry Library</td>
+  </tr>
+  <tr>
+    <td>2013-2016</td>
+    <td>George Amos Poole III Curator of Rare Books, The Newberry
+    Library</td>
+  </tr>
+  <tr>
+    <td>1987-2016</td>
+    <td>Custodian of the John M. Wing Foundation on the History of
+    Printing, The Newberry Library</td>
+  </tr>
+  <tr>
+    <td>1984-87</td>
+    <td>Associate Director of Research and Education, The Newberry
+    Library</td>
+  </tr>
+  <tr>
+    <td>1981-84</td>
+    <td>Assistant Director of Research and Education, The Newberry
+    Library</td>
+  </tr>
+  <tr>
+    <td>1979-81</td>
+    <td>Visiting Lecturer in Christianity, Dept. of the History and
+    Literature of Religions, Northwestern University</td>
+  </tr>
+  <tr>
+    <td>1978-81</td>
+    <td>Assistant Director, Religion and Ethics Institute, Inc.</td>
+  </tr>
+</table>
+<h3 id="education">EDUCATION:</h3>
+<table>
+  <tr>
+    <td>1976</td>
+    <td>Ph.D. (History), University of Chicago</td>
+  </tr>
+  <tr>
+    <td>1972</td>
+    <td>M.A. (History), University of Chicago</td>
+  </tr>
+  <tr>
+    <td>1971</td>
+    <td>A.B. Classics, John Carroll University</td>
+  </tr>
+</table>
+<h3 id="books">BOOKS:</h3>
+<p>Chicago Modernism &amp; the Ludlow Typograph: Douglas C. McMurtrie
+    and Robert Hunter Middleton at Work. Newtown (NSW, Australia): Opifex,
+    2020.</p>
+<p>A Meditation in Rome. New York: Russell Maret, 2012.</p>
+<p>A Moral Art: Grammar, Culture and Society in Trecento Florence.
+    Ithaca: Cornell University Press, 1993.</p>
+<h3 id="online-book">ONLINE BOOK:</h3>
+<p>Humanism For Sale. Making and Marketing School Books in Italy,
+    1450-1650. Published by the Newberry Library Center for Renaissance
+    Studies, 2009: www.humanismforsale.org/text</p>
+<h3 id="edited-volume">EDITED VOLUME:</h3>
+<p>Robert Hunter Middleton, The Designer-Craftsman Speaks: Writings by
+    Robert Hunter Middleton. Newtown (NSW, Australia): Opifex, forthcoming
+    in 2024.</p>
+<h3 id="scholarly-articles">SCHOLARLY ARTICLES:</h3>
+<p>"Stanley Pargellis: Building a 'Scholar's Library' for Chicago,"
+    forthcoming in La Bibliofilía 125 (2024).</p>
+<p>"Mid-century Opportunism in the Book Market: Newberry Librarians in
+    Europe," forthcoming in Library and Information History 40 (April
+    2024).</p>
+<p>"Tommaso Schifaldo in a Sicilian Humanist Miscellany," forthcoming in
+    Customized Books in Early Modern Europe. Edited by Walter Melion and
+    Christopher Fletcher. Leiden: Brill, 2023. Pp. 290-324.</p>
+<p>"Two Collections: Type on the Page at the Houghton and Newberry
+    Libraries," Textual Cultures 16.2 (2023), 29-53. Open access journal:
+    https://doi.org/10.14434/tc.v16i2.36764</p>
+<p>"Frank Barr: Avant-Garde Designer in Mid-Century Chicago," Journal of
+    Design History 2023, https://doi.org/10.1093/jdh/epad010.</p>
+<p>"Sheltering Books From Anarchy: The Library of Clémence Royer in
+    Chicago," Bulletin du bibliophile 2022, no. 2, 259-270.</p>
+<p>"Humanist Pedagogy and 'Humanist' Design: the Bavarian Case of
+    Johannes Aventinus." In Imago Librorum. Mille anni di forme del libro in
+    Europa. Edited by Edoardo Barbieri and Luca Rivali, Florence, Olschki,
+    2021. Pp. 169-189.</p>
+<p>"A Laywoman's Devotion on the Handcrafted Page: Modern Altar Cards
+    Created by Gertrude Carrier," Archivio italiano per la storia della
+    pietà 34 (2021), 333-365.</p>
+<p>Co-authored with Eufemia Baldassarre and Lia Markey, "A
+    Scholar-Collector in Mid-Century Chicago: The Books of Bernard
+    Weinberg." In Beyond Aristotelian Poetics, New Directions in Literary
+    Criticism. Edited by Bryan Brazeau, London, Bloomsbury, 2020. Pp. 19-37
+    and 251-286.</p>
+<p>"Procurare all'America i migliori libri europei: Storia della stampa
+    alla Harvard University e alla Newberry Library." In Biblioteche e
+    saperi: Circolazioni di libri e di idee tra età moderna e contemporanea.
+    Edited by Giovanna Granata. Rome, Edizioni di Storia e Letteratura,
+    2019. Pp. 93-120.</p>
+<p>"A Scholar-Librarian Collects: Hans Baron at the Newberry Library."
+    In Lux Librorum. Essayson Books and History For Chris Coppens. Edited by
+    Goran Proot et al. Mechelen, Flanders Book History Society, 2018. Pp.
+    213-228.</p>
+<p>"Teaching With Type: Design for the Renaissance Grammar Classroom,"
+    La Bibliofilía 119 (2017), 349-365.</p>
+<p>"American Collecting Traditions. Emblem Books at the Newberry
+    Library." In Itinerari del libro nella storia. Per Anna Giulia Cavagna.
+    Edited by Francesca Nepori, Fiametta Saba and Paolo Tinti. Bologna,
+    Patron, 2017. Pp. 251-257.</p>
+<p>"Selling Terence in Renaissance Italy: The Marketing Power of
+    Commentary." In Classical Commentaries: Explorations in a Scholarly
+    Genre. Edited by Christina S. Kraus and Christopher Stray. Oxford:
+    Oxford University Press, 2016. Pp. 253-274.</p>
+<p>"A Libertine in Print (and Not): Bibliographizing Pietro Lasena," La
+    Bibliofilía 115 (2013), 105- 111.</p>
+<p>"Advertising or Fama? Local Markets for Schoolbooks in
+    Sixteenth-Century Italy." In Print Culture and Peripheries in Early
+    Modern Europe: A Contribution to the History of Printing in Small
+    European and Spanish Cities. Edited by Benito Rial-Costas. Leiden:
+    Brill, 2013. Pp. 69-99.</p>
+<p>Co-authored with Kevin M. Stevens, "Cheap Print: A Look Inside the
+    Lucini/Sirtori StationeryShop at Milan (1597-1613), La Bibliofilía 112
+    (2010), 281-327.</p>
+<p>"The Calligraphic Tradition in Chicago Graphic Design, 1900-1950,"
+    Bibliología 5 (2010), 127-163.</p>
+<p>"Off the Press and Into the Classroom: Using the Textbooks of Antonio
+    Mancinelli," History of Education and Children's Literature 3 (2008),
+    19-30.</p>
+<p>"The Maiuscole Moderne of Giovambaptista Verini Fiorentino: From
+    Music Texts to Calligraphic Musicality," In Writing Relations, American
+    Scholars in Italian Archives, Essays for Franca Petrucci Nardelli and
+    Armando Petrucci. Edited by Deanna Shemek and Michael Wyatt. Florence:
+    Olschki, 2008. Pp. 41-70.</p>
+<p>"Grammatica Despauteriana: L'adattamento di libri di testo
+    provenienti dal Nord Europa per il mercato editoriale italiano,
+    1540-1600," Bibliología 3 (2008), 35-53.</p>
+<p>"Moral Analogies in Print: Emblematic Thinking in the Making of Early
+    Modern Books," Philosophica 70 (2002, but 2004), 91-107. [Special issue,
+    Diagrams and the Anthropology of Space, edited by Kenneth J.
+    Knoespel.]</p>
+<p>"Religion and Politics in the Market for Books: The Jesuits and Their
+    Rivals," Papers of the Bibliographical Society of America 97 (2003),
+    435-460.</p>
+<p>Co-authored with Kevin M. Stevens, "The Eye of Commerce: Visual
+    Literacy Among the Makers of Books in Italy." In The Art Market in
+    Italy. Edited by Sara Matthews Grieco. Ferrara: Istituto di Studi
+    Rinascimentali, 2003. Pp. 273-281.</p>
+<p>"La storia dei tipi può essere una buona storia?" Progetto grafico 1
+    (July 2003), 34-38. This talk, to ATypIRoma 2002, was republished in the
+    original English as a book under the title A Meditation in Rome, 2012
+    (see above).</p>
+<p>"Latin Orthopraxes." In Latin Grammar and Rhetoric in the Middle
+    Ages. Edited by Carol Dana Lanham. London: Continuum, 2002. Pp.1-21.</p>
+<p>"Military Courtesy in Sixteenth-Century Lithuania: Il Cavaliere of
+    Domenico Mora," Archivum Lithuanicum 3 (2001), 55-76.</p>
+<p>"'Mancha uno alfabeto intero': Recording Defective Book Shipments in
+    Counter-ReformationFlorence," Papers of the Bibliographical Society of
+    America 93(1999), 316-358.</p>
+<p>"Day-by-day on Credit: Binders and Book Sellers in Cinquecento
+    Florence," La Bibliofilía 100(1998), 391-409.</p>
+<p>"Describing (and Selling) Bindings in Sixteenth-Century Florence,"
+    Italian Studies 53 (1998),38-51.</p>
+<p>"Credit-Sales Strategies in the Late Cinquecento Book Trade." In
+    Libri tipografi biblioteche. Ricerche storiche dedicate a Luigi Balsamo.
+    Edited by Arnaldo Ganda and E. Grignani. Florence: Olschki, 1997. Pp.
+    193-206.</p>
+<p>"Libri per donne: le monache clienti del libraio Piero Morosi,
+    1588-1607." In Donna e disciplina. Edited by Gabriella Zarri. Rome:
+    Edizioni di storia e letteratura, 1996. Pp. 67-82.</p>
+<p>"The 1615 Statutes of the Sienese Guild of Stationers and
+    Booksellers. Provincial Publishing inEarly Modern Tuscany," I Tatti
+    Studies 6 (1995), 215-253.</p>
+<p>"Preachers, Teachers and Translators: The Social Meaning of Latin in
+    Trecento Tuscany," Viator 25 (1994), 289-323.</p>
+<p>Co-authored with Kevin M. Stevens, "Giovanni Battista Bosso and the
+    Paper Trade in Sixteenth-Century Milan," La Bibliofilía, 96 (1994),
+    43-90.</p>
+<p>"Watermark Evidence for the Competitive Practices of Antonio
+    Miscomini," The Library, ser. 6, vol. 15 (1993), 281-305.</p>
+<p>"An Augustinian Catechism from Fourteenth-Century Florence, the
+    Epigrammata of Prosper of Aquitaine," Augustinian Studies 19 (1990),
+    93-110.</p>
+<p>"Latin Readers in Fourteenth-Century Florence: Schoolkids and their
+    Books," Scrittura e civiltà 13 (1989), 387-440.</p>
+<p>"Competens silentium: Varieties of Monastic Silence in the Middle
+    Ages," Viator 18 (1987), 125-160.</p>
+<p>"An Answering Silence: Medieval and Modern Claims for the Unity of
+    Truth Beyond Language," Philosophy Today (Fall 1986), 224-233.</p>
+<p>"Philip of Harveng on Silence," Proceedings of the Illinois Medieval
+    Association 2 (1985), 168-181. Partial text on-line at:
+    www.luc.edu/publications/medieval/vol2/gehl.html.</p>
+<p>"Mystical Language Models in Monastic Educational Psychology,"
+    Journal of Medieval and Renaissance Studies 14 (1984), 219-243.</p>
+<p>"From Monastic Rhetoric to Ars Dictaminis: Traditionalism and
+    Innovation in the Schools of Twelfth-Century Italy," American
+    Benedictine Review 34 (1983), 33-47.</p>
+<p>"Some Problems in Cataloging Medieval Grammaticalia," Res Publica
+    Litterarum 5,2 (1982), 85-91.</p>
+<p>"Apropos of Catalogue Notices and the History of Grammatical
+    Pedagogy," Revue d'Histoire des Textes 8 (1978), 303-307.</p>
+<p>ESSAYS, TRANSLATIONS, EDITING PROJECTS:</p>
+<p>"Barbara Lazarus Metz: A Remembrance &amp; an Invitation," Guild of
+    Bookworkers Newsletter, April 2022.</p>
+<p>"When Chicago Led the Race for Modernist American Typefaces," Chicago
+    Art Deco Society Magazine Summer/Fall 2020,14-16.</p>
+<p>"Looking Back: 125 Years of the Caxton Club," Caxtonian 28:5 (May
+    2020), 1-3.</p>
+<p>"The Book Review as Quid pro quo," The Clarion 12:3 (March 2020), 4,
+    11.</p>
+<p>Foreword to Alan Loney, In Search of the Book as a Work of Art.
+    Alexandria: Opifex, 2019.</p>
+<p>"The Craft of the Foreword," The Clarion 11:8 (August 2019), 6-7.</p>
+<p>"The Chap-Book," in Chicago by the Book: 101 Publications that Shaped
+    the City and its Image, Chicago: The Caxton Club, 2018.</p>
+<p>Introduction to An Alphabet of Sorts. Aurora, NY and Chicago: Wells
+    College Press and Starshaped Press, 2015.</p>
+<p>"The Types of Russell Maret," in Pressed For Time, a Descriptive
+    Bibliography of the Work of Russell Maret. New York: Russell Maret,
+    2014. Pp. 103-104.</p>
+<p>Foreword to Demetrio Yocum, Petrarch's Humanist Writing and
+    Carthusian Monasticism. Turnhout: Brepols, 2013.</p>
+<p>Various entries in The Newberry 125. Stories of Our Collection.
+    Chicago: The Newberry Library, 2012.</p>
+<p>Foreword to Jason Dewinetz, Alphabetum Romanum, The Letterforms of
+    Felice Feliciano, ca. 1460, Verona. Vernon, B.C.: Greenboathouse Press,
+    2010.</p>
+<p>Various entries for the Oxford Companion to the Book. Oxford: Oxford
+    University Press, 2009.</p>
+<p>"Celebrating Robert Williams," Chicago Calligraphy Collective
+    Newsletter, March 2007, 2-3.</p>
+<p>"Norma Rubovits and Her Collection at the Newberry Library in
+    Chicago," Society of Marbling 2006 Annual, 21-24.</p>
+<p>"The Newberry Alphabet: A Note on Provenance," Typography Papers 6
+    (2005), 17-18.</p>
+<p>"Book Arts" and "Printing" entries for The Encyclopedia of Chicago.
+    Chicago: University of Chicago Press, 2004. Pp. 87-88 and 646-648. Full
+    text with additional illustrations online at:
+    encyclopedia.chicagohistory.org.</p>
+<p>"Education" and "Universities" entries for Medieval Italy: An
+    Encyclopedia. Edited by Christopher Kleinhenz. New York: Routledge,
+    2004. Pp. 313-315 and 1107-1109.</p>
+<p>"The Making of a Chicago Eccentric," foreword to John Mansir Wing,
+    The Chicago Diaries of John M. Wing, 1865-1866, ed. by Robert Williams.
+    Carbondale and Chicago: Southern Illinois University Press and the
+    Caxton Club of Chicago, 2002. Pp. ix-xiii.</p>
+<p>Guest editor, history of design issue of InForm (quarterly journal of
+    the American Institute of Graphic Arts / Chicago chapter), September
+    2001.</p>
+<p>"Florence in Chicago," in Chicago Calligraphy Collective Letter,
+    Winter 2001, 4-10.</p>
+<p>"Recent Trends in the History of the Italian Book," talk presented to
+    the Western European Studies Section of the American Library
+    Association, July 10, 2000; full text: http://
+    www.newberry.org/printing-history-and-book-arts-recent-trends-history-italian-book</p>
+<p>"The Professional Bookman: Middleton at Ludlow," Caxtonian 6 (1998),
+    1.</p>
+<p>"From Clay Tablets to CDs: A Short History of the Written Word," The
+    Chicago Calligraphy Collective Letter, Summer 1998, 6-13.</p>
+<p>"What's This Purchase Prize For, Anyway?" The Chicago Calligraphy
+    Collective Letter, Winter 1998, 2.</p>
+<p>"Bertram Lord Ashburnham" Dictionary of Literary Biography 184:
+    Nineteenth-Century British Book Collectors and Biographers. Atlanta:
+    Bruccoli Clark Leman, 1997.Pp. 10-20.</p>
+<p>"Chicago Collecting?" in Personal Treasures. Chicago: Caxton Club,
+    1995. Pp. 3-8.</p>
+<p>"Some Thoughts on Politics and Moral Education" in REI Newsletter
+    July 1994.</p>
+<p>"Books on View," in Bookways 8 (1993), l2-13.</p>
+<p>Co-authored with Elizabeth Zurawski, "Incunables Bound By Elizabeth
+    Kner: the 1950-51 Project for the Newberry," Guild of Bookworkers
+    Journal 31 (1993), 1-35. Reprinted in Hungarian with new illustrations
+    as "Inkunábulumok Kner Erzébet öteseben," Magyar Grafika 38 (1994),
+    19-25 and 37-47.</p>
+<p>Translations of Simone Prudenzani and other fourteenth-century poets
+    for Newberry Consort recording, Il Solazzo, Music for a Medieval
+    Banquet. Harmonia Mundi CD, 1992.</p>
+<p>A Bookplate By Eric Gill. Chicago: The Newberry Library, 1990. 8
+    pp. </p>
+<p>Co-authored (with Richard H. Brown), "The Newberry Library Today, a
+    Community of Learners." In Humanities' Mirror, Reading at the Newberry,
+    1887-1987. Chicago: The Newberry Library, 1987. Pp. 37-42.</p>
+<p>"Texts and Textures: Dirty Pictures and Other Things in Medieval
+    Manuscripts," Corona 3 (1982), 68-77.</p>
+<p>Co-authored (with Patricia Jobe), "Roma Illustrata: Maps in the Adult
+    Education Classroom," Mapline 28 (1982), 1-2.</p>
+<p>The Roman Imperial Cult. Illustrated Slide Lecture A4. Evanston:
+    Religion and Ethics Institute, 1979. 8pp., 24 slides.</p>
+<p>Cybele and Attis. Mystery Religions Lecture 8. Evanston: Religion and
+    Ethics Institute, 1979. 8pp., 24 slides.</p>
+<p>NON-PRINT/BORN-DIGITAL:</p>
+<p>"Yes, But Slowly; Translating Emilo Villa," The Decadent Review, July
+    2019: https://thedecadentreview.com/ corpus/emilio-villa-in-english/</p>
+<p>Various background essays (unsigned) for the Newberry's Italian
+    Paleography site, live July 26, 2019:
+    https://italian-paleography.library.utoronto.ca/</p>
+<p>"Huh? No. 30: An Interview with Paul Gehl," October 26, 2016.
+    Perpetual Beta blog of the Vermont College of Fine Arts
+    (https://perpetualbeta.vcfa.edu/).</p>
+<p>"A Contemporary View on Curatorial History: An Interview with Paul
+    Gehl," Jan. 9, 2013. Tropisms blog of Adam Kallish
+    (http://blog.tropesites.com).</p>
+<p>"Hey, It's 2012 Already, Why Bother With Book History?" lecture at
+    Wabash College, Oct. 23, 2012. YouTube.</p>
+<p>"One Hundred Years of Poetry. Designing the Magazine, 1912-2012: A
+    Detailed Look at Our Typographic History," illustrated essay for the
+    Poetry Foundation website, Fall 2012:
+    www.poetryfoundation.org/article/244922#article</p>
+<p>"Newberry Minute: Calligraphy at the Newberry," June 16, 2011.
+    YouTube.</p>
+<p>"Newberry Minute: Apocalypsis Sancti Johannis (Block Book), June 6,
+    2009. YouTube.</p>
+<p>"Typeface Extra Scenes: The Most Ambitious Wood Type in the World,"
+    outtake from the Kartemquin film Typeface, released on DVD in 2009,
+    available on YouTube.</p>
+<p>"Old Type/New Face: Digitizing a Classic Typeface," born-digital
+    essay co-authored with designer/typesetter Paul Baker. On his website
+    1997-2013; no longer available.</p>
+<p>LIBRARY EXHIBITS &amp; CATALOGS (at the Newberry unless otherwise
+    indicated):</p>
+<p>Curatorial advisor, Renaissance Capitals from the Maywald Collection
+    at the University of Minnesota, Hamilton Wood Type and Printing Museum,
+    Two Rivers, Wisconsin, 2018.</p>
+<p>Curator, Calligraphy is Always News, 2016.</p>
+<p>Curatorial contributor, Ephemera by Design, Organizing the Everyday,
+    2015.</p>
+<p>Curator, Chicago's Great 20th-century Bookman: The Newberry Career of
+    James M. Wells (1917-2014), 2015</p>
+<p>Curatorial contributor, Treasures of Faith: Twenty Years of
+    Acquisitions, 2013.</p>
+<p>Curatorial contributor, The Newberry 125, 2012.</p>
+<p>Co-curator (with Barbara Korbel and Giselle Simon), Marbled Papers
+    and Fine Bindings by Norma B. Rubovits, The Newberry Library, Chicago,
+    2010.</p>
+<p>Co-curator (with Jenny Schwartzberg), Artifacts of Childhood: 700
+    Years of Children's Books at The Newberry Library, 2008-2009.</p>
+<p>Catalog essay, "Nothing…About Books: Reading Textures in the Books of
+    Anton Würth." In Anton Würth, in Form von Buch. Offenbach: Klingspor
+    Museum, 2008. Pp. 20-25.</p>
+<p>Curatorial contributor, Recent Acquisitions at the Newberry Library,
+    2008.</p>
+<p>Local curator, Disbound and Disbursed: The Leaf Book Considered.
+    Caxton Club, 2005.</p>
+<p>Foreword, The Press at Colorado College: Pressroom as Classroom.
+    Colorado Springs: Colorado College, 2004. Pp. 9-10.</p>
+<p>Introduction, Inland Printers: The Fine Press Movement in Chicago,
+    1920-1945, Chicago: The Caxton Club, 2003. Pp. 5-13.</p>
+<p>Catalog essay, "Something Added, Thoughts on Process," in Jerome Book
+    Arts Fellowship Exhibition VII. Minneapolis: Minnesota Center for Book
+    Arts, 2001. Pp. 4-5.</p>
+<p>Curator, Florentine Humanism and the Church Fathers, 2000.</p>
+<p>Curatorial contributor, The Joy of Collecting, Recent Acquisitions at
+    the Newberry Library, 1999.</p>
+<p>Curatorial contributor, Living Treasures of the Newberry Library,
+    1998.</p>
+<p>Curatorial contributor, The Hebrew Renaissance, 1997.</p>
+<p>Curatorial contributor and sometime juror, Explorations, the annual
+    juried exhibit of the Chicago Calligraphy Collective, 1995 – 2016.</p>
+<p>Co-curator, Personal Treasures: Favorite Books of Caxton Club
+    Members, 1995.</p>
+<p>Curator, A Century of Book Collecting and Book Loving in Chicago,
+    Caxton Club centennial exhibit, 1995.</p>
+<p>Curator, Ernst F. Detterer: Chicago Teacher, Designer and Collector,
+    1889-1947, 1990.</p>
+<p>Foreword, Chicago edition of Fifteenth Century Italian Woodcuts from
+    the Biblioteca Classense in Ravenna (Ravenna: Longo, 1989).</p>
+<p>Co-curator (with Clark Hulse), An Uncommon Collector: Frederic Ives
+    Carpenter (1861-1925), An Exhibit of Renaissance Imprints at the
+    Newberry Library, 1986.</p>
+<p>Curatorial assistant, Faith, Law and Dissent, The Inquisition in the
+    Early Modern World, 1985.</p>
+<p>Miniature exhibits in the Newberry Library spotlight series on
+    Napoleon I &amp; Josephine (2003), Papal Rome (2003), Second Empire
+    Paris (2004), the Klaus Stopp collection (2004), Marie Antoinette
+    (2005), Copyright Issues (2006), Multi-Lingual Typography (2007),
+    Printed Ephemera (2008), Book Crimes (2010), Military Architecture
+    (2011).</p>
+<h3 id="fellowships">FELLOWSHIPS:</h3>
+<style>
+  .fellow-list {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+  }
+  .fellow-list li {
+    margin: 0;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 6px 0;
+  }
+  </style>
+<ul class="fellow-list">
+  <li>Harvard Center for Renaissance Studies at Villa I Tatti (1993-94)</li>
+  <li>Newberry Library/British Academy Exchange (1989)</li>
+  <li>American Council of Learned Societies (1987-88)</li>
+  <li>American Academy in Rome (1977-78)</li>
+  </ul>
+<p class="para"><strong>JURYING AND JUDGING</strong> for design and book-arts competitions of the
+    Association of American University Presses, Chicago Book Clinic, Chicago
+    Calligraphy Collective, Chicago Hand Bookbinders, Chicago Public
+    Library, Columbia College Chicago Center for Book and Paper Arts, Guild
+    of Bookworkers, Minnesota Center for the Book Arts.</p>
+<p class="para"><strong>BOOK REVIEWS</strong> have appeared in Analytical and Enumerative
+    Bibliography, La Bibliofilía, Bulletin du Bibliophile, The CODEX Papers,
+    The Decadent Review, Historiographia Linguistica, History of Education
+    Quarterly, Italica, Journal of Interdisciplinary History, Modern
+    Language Review, Papers of the Bibliographical Society of America,
+    Parenthesis, Printing History, Publishing Research Quarterly, Religious
+    Studies Review, Renaissance Quarterly, Sixteenth-Century Studies,
+    Speculum, etc.</p>
+<h3 id="personal">PERSONAL:</h3>
+<table>
+  <tr>
+    <td>Born:</td>
+    <td>September 24, 1949 at West Bend, Wisconsin</td>
+  </tr>
+  <tr>
+    <td>Citizenship:</td>
+    <td>U.S.A. (fifth-generation German-American)</td>
+  </tr>
+  <tr>
+    <td>Service:</td>
+    <td>Current or past service on boards or committees of the
+    American Printing History Association, Bibliotheca Wittockiana, Caxton
+    Club, Hamilton Wood Type and Printing Museum, Press at Colorado College,
+    Religion and Ethics Institute, Seminary Co-op Bookstores, La
+    Bibliofilía, Archivio italiano per la storia della pietà, Litterae
+    Caelestes, rarebooksinfo.com.</td>
+  </tr>
+  <tr>
+    <td>Contact:</td>
+    <td>gehlp@newberry.org 312-255-3657</td>
+  </tr>
+</table>
+
+<p style="text-align: right">2/24</p>
+</div>
+                <div id="comments-section"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <style data-emotion="css 1in29ov">
+          .css-1in29ov {
+            z-index: 100;
+            position: fixed;
+            bottom: 15px;
+            right: 35px;
+            cursor: pointer;
+            -webkit-transition: 0.2s;
+            transition: 0.2s;
+          }
+
+          .css-1in29ov:hover {
+            -webkit-filter: drop-shadow(0 0 5px var(--textTitle);
+            }
+
+            svg {
+              height: 30px;
+              width: 30px;
+              // z-index: 0;
+            }
+
+            ;
+          }
+          }
+
+          ; filter:drop-shadow(0 0 5px var(--textTitle);
+          }
+
+          svg {
+            height: 30px;
+            width: 30px;
+            // z-index: 0;
+          }
+
+          ;
+          }
+          }
+
+          ;
+          }
+        </style>
+        <div class="icons css-1in29ov ej2uopy0"><svg width="24" height="24" viewBox="0 0 24 24" fill="#000"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>Switch to Dark Mode</title>
+            <path
+              d="M12 11.807C10.7418 10.5483 9.88488 8.94484 9.53762 7.1993C9.19037 5.45375 9.36832 3.64444 10.049 2C8.10826 2.38205 6.3256 3.33431 4.92899 4.735C1.02399 8.64 1.02399 14.972 4.92899 18.877C8.83499 22.783 15.166 22.782 19.072 18.877C20.4723 17.4805 21.4245 15.6983 21.807 13.758C20.1625 14.4385 18.3533 14.6164 16.6077 14.2692C14.8622 13.9219 13.2588 13.0651 12 11.807V11.807Z">
+            </path>
+          </svg></div>
+      </div>
+    </div>
+    <div id="gatsby-announcer"
+      style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0"
+      aria-live="assertive" aria-atomic="true"></div>
+  </div>
+  <script>
+    function gaOptout() {
+      document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/', window[disableStr] = !0
+    }
+    var gaProperty = 'UA-5551324-9',
+      disableStr = 'ga-disable-' + gaProperty;
+    document.cookie.indexOf(disableStr + '=true') > -1 && (window[disableStr] = !0);
+    if (!(parseInt(navigator.doNotTrack) === 1 || parseInt(window.doNotTrack) === 1 || parseInt(navigator
+        .msDoNotTrack) === 1 || navigator.doNotTrack === "yes")) {
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    }
+    if (typeof ga === "function") {
+      ga('create', 'UA-5551324-9', 'auto', {});
+      ga('set', 'anonymizeIp', true);
+
+
+
+
+    }
+  </script>
+  <script>
+    if (true) {
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    }
+    if (typeof ga === "function") {
+      ga('create', 'UA-5551324-4', 'auto', {});
+
+
+
+
+
+    }
+  </script>
+  <script id="gatsby-script-loader">
+   
+  </script>
+  <script id="gatsby-chunk-mapping">
+    /*<![CDATA[*/
+    window.___chunkMapping = {
+      "polyfill": ["/polyfill-992a8de5c5624e1390c4.js"],
+      "app": ["/app-14a92cd851ad888395df.js"],
+      "component---src-pages-404-js": ["/component---src-pages-404-js-b52f3ebf9be3c7c9ebab.js"],
+      "component---src-pages-csstest-js": ["/component---src-pages-csstest-js-4cca9e19a27909d02cf3.js"],
+      "component---src-pages-markdown-remark-frontmatter-slug-js": [
+        "/component---src-pages-markdown-remark-frontmatter-slug-js-d3d1122bb30dcb098ea5.js"
+      ],
+      "component---src-pages-search-page-js": ["/component---src-pages-search-page-js-582f7cccc6ca539aa33f.js"],
+      "component---src-templates-supp-pages-js": ["/component---src-templates-supp-pages-js-897121df3bd1ca9c1a83.js"]
+    }; /*]]>*/
+  </script>
+  <script src="/polyfill-992a8de5c5624e1390c4.js" nomodule=""></script>
+  <script src="/component---src-pages-markdown-remark-frontmatter-slug-js-d3d1122bb30dcb098ea5.js" async=""></script>
+  <script src="/4b58679c93aa390a5fba288d8a31495fb6cab398-ac5473d8acce3fc74da9.js" async=""></script>
+  <script src="/app-14a92cd851ad888395df.js" async=""></script>
+  <script src="/framework-c53bdae0511f068d8611.js" async=""></script>
+  <script src="/webpack-runtime-5c9372066c9833b17b9b.js" async=""></script>
+</body>
+
+</html>

@@ -11,9 +11,9 @@
 
     export let image 
     $: id = $page.params.id || '2KXJ8ZSRY0U_H' 
-    $: dataUrl = $page.url.href 
+    $: dataUrl = `https://digital.newberry.org/postcard-sender/${id}` 
     $: dataImg = imgUrl(image, 'large')
-    const dataMessage = '<a href="testo">testo</a><img src="https://ogp.me/logo.png" alt="" />'
+    const dataMessage = dataUrl
     const dataTitle = "Vintage Postcard Greeting!"
 
     let copied = false
