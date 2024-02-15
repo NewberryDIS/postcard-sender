@@ -3,6 +3,7 @@
     import { base } from '$app/paths'
     import { onMount } from 'svelte'
     import { imgUrl } from '$lib'
+    import EmailForm from '$comps/EmailForm.svelte'
     import EmailIcon from '$icons/envelope-icon.svelte'
     import HyperlinkIcon from '$icons/hyperlink-icon.svelte'
     import LetterIcon from '$icons/letter-stamp-icon.svelte'
@@ -15,7 +16,7 @@
     $: dataImg = imgUrl(image, 'large')
     const dataMessage = dataUrl
     const dataTitle = "Vintage Postcard Greeting!"
-
+let showForm = false
     let copied = false
     $: copyText = copied ? 'Copied!' : 'Click to copy'
     
@@ -28,21 +29,38 @@
       }, 3000)
     }
     // console.log()
+    const emailSubject = "Vintage Postcard"
+    $: emailBody= `I saw this postcard and thought of you!  ${dataUrl}`
 </script>
+{#if showForm}
+    <EmailForm {image}/>
+{/if}
 <div class="st-custom-buttons">
-    <button 
-      class="st-custom-button" 
-      data-network="email" 
-      data-url={dataUrl} 
-      data-image={dataImg} 
-      data-message={dataMessage} 
-      data-title={dataTitle} 
-      data-email-subject={dataTitle}>
+    <a href="mailto:?subject=Vintage%20Postcard%20from%20Newberry%20Library&body=I%20saw%20this%20postcard%20and%20thought%20of%20you!%20{dataUrl}" class="st-custom-button" target="_blank">
         <span class="icon">
             <EmailIcon />
         </span>
         <span class="btn-label">Send an email</span>
-    </button>
+    </a>
+    <!--     <button on:click={() => showForm = true}> -->
+    <!--     <span class="icon"> -->
+    <!--         <EmailIcon /> -->
+    <!--     </span> -->
+    <!--     <span class="btn-label">Send an email</span> -->
+    <!-- </button> -->
+    <!-- <button  -->
+    <!--   class="st-custom-button"  -->
+    <!--   data-network="email"  -->
+    <!--   data-url={dataUrl}  -->
+    <!--   data-image={dataImg}  -->
+    <!--   data-message={dataMessage}  -->
+    <!--   data-title={dataTitle}  -->
+    <!--   data-email-subject={dataTitle}> -->
+    <!--     <span class="icon"> -->
+    <!--         <EmailIcon /> -->
+    <!--     </span> -->
+    <!--     <span class="btn-label">Send an email</span> -->
+    <!-- </button> -->
     <button 
       class="st-custom-button" 
       data-network="sms" 
