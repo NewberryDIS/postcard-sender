@@ -9,3 +9,9 @@ nodeversion/.svelte-kit_
 nodeversion/package
 nodeversion/.env
 nodeversion/.env.*
+node_modules
+.svelte-kit
+.env
+.env*
+build/
+
