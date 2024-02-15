@@ -9,7 +9,7 @@
   import Dropdown from '$comps/Dropdown.svelte'
   import ShareButtons from '$comps/ShareButtons.svelte'
 
-  $: id = $page.params.id ||  "2KXJ8ZSRY0U_H"
+  $: id = $page.params.id ||  "2KXJ8ZSUDCEP9"
   $: featuredPostcard = allPostcards.filter(f => f.mei === id || f.image === id).pop() || {
     "gallery": "valentines-day",
     "title": "Valentine greetings",

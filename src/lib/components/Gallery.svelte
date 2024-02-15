@@ -10,8 +10,9 @@ import { MasonryGrid } from "@egjs/svelte-grid";
   const align = "center";
   const defaultDirection = "end" 
 
-afterNavigate(() => {
-    $showImage = true 
+    afterNavigate((n) => {
+        console.log(n)
+   $showImage = true 
   })
 beforeNavigate(() => {
     $showImage = false

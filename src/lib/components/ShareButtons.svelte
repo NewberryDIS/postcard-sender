@@ -29,12 +29,12 @@ let showForm = false
       }, 3000)
     }
     // console.log()
-    const emailSubject = "Vintage Postcard"
+    const emailSubject = "Vintage Postcard from Newberry Library"
     $: emailBody= `I saw this postcard and thought of you!  ${dataUrl}`
 </script>
-{#if showForm}
-    <EmailForm {image}/>
-{/if}
+<!-- {#if showForm} -->
+<!--     <EmailForm {image}/> -->
+<!-- {/if} -->
 <div class="st-custom-buttons">
     <a href="mailto:?subject=Vintage%20Postcard%20from%20Newberry%20Library&body=I%20saw%20this%20postcard%20and%20thought%20of%20you!%20{dataUrl}" class="st-custom-button" target="_blank">
         <span class="icon">
@@ -61,13 +61,20 @@ let showForm = false
     <!--     </span> -->
     <!--     <span class="btn-label">Send an email</span> -->
     <!-- </button> -->
+<!-- <a href="sms:+&body=I saw this postcard and thought of you!  {dataUrl}"  class="st-custom-button" target="_blank"> -->
+<!---->
+<!--         <span class="icon"> -->
+<!--             <SmsIcon /> -->
+<!--         </span> -->
+<!--         <span class="btn-label">Send a text</span> -->
+<!--     </a> -->
     <button 
       class="st-custom-button" 
       data-network="sms" 
       data-url={dataUrl} 
       data-image={dataImg} 
-      data-message={dataMessage} 
-      data-title={dataTitle}>
+      data-message={emailBody} 
+      data-title={emailSubject}>
         <span class="icon">
             <SmsIcon />
         </span>
