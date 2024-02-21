@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store'
 
+export const defaultPostcard = '2KXJ8ZSUD5ZN7'
 export const activeGallery = writable('')
 export const showImage = writable(false)
 

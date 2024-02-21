@@ -2,7 +2,7 @@
     import { page } from '$app/stores'
     import { base } from '$app/paths'
     import { onMount } from 'svelte'
-    import { imgUrl } from '$lib'
+    import { defaultPostcard, imgUrl } from '$lib'
     import EmailForm from '$comps/EmailForm.svelte'
     import EmailIcon from '$icons/envelope-icon.svelte'
     import HyperlinkIcon from '$icons/hyperlink-icon.svelte'
@@ -11,7 +11,7 @@
     import MobileSmsMessagesIcon from '$icons/mobile-sms-messages-icon.svelte'
 
     export let image 
-    $: id = $page.params.id || '2KXJ8ZSRY0U_H' 
+    $: id = $page.params.id || defaultPostcard 
     $: dataUrl = `https://digital.newberry.org/postcard-sender/${id}` 
     $: dataImg = imgUrl(image, 'large')
     const dataMessage = dataUrl

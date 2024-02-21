@@ -4,7 +4,7 @@
   import { onMount } from 'svelte'
   import { page } from '$app/stores'
   import { base } from '$app/paths'
-  import { imgUrl, activeGallery, showImage } from '$lib'
+  import { defaultPostcard, imgUrl, activeGallery, showImage } from '$lib'
   import Gallery from '$comps/Gallery.svelte'
   import Dropdown from '$comps/Dropdown.svelte'
   import ShareButtons from '$comps/ShareButtons.svelte'
