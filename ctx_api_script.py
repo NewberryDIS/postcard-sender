@@ -1,7 +1,13 @@
 import requests
 import json
 import os
+from dotenv import load_dotenv, find_dotenv
 from slugify import slugify
+
+load_dotenv(find_dotenv())
+
+just_galleries = []
+just_postcards = []
 
 def fetch_data(mei):
     api_url = f'{package_extractor[0]}{mei}{package_extractor[1]}{token}'
@@ -31,7 +37,7 @@ def process_gallery_data(gallery, gallery_api_data):
         'width': gallery_api_data['APIResponse']['Representative']['MaxWidth'],
         'height': gallery_api_data['APIResponse']['Representative']['MaxHeight'],
     })
-
+    just_galleries.append(gallery)
     for api_entry in gallery_api_data['APIResponse']['Content']:
         processed_data = {
             'gallery': gallery['slug'],
@@ -39,6 +45,7 @@ def process_gallery_data(gallery, gallery_api_data):
             'mei': api_entry['MediaEncryptedIdentifier'],
         }
         gallery['postcards'].append(processed_data)
+
 
 # when a librarian adds a canvas instead of a manifest, it is used anyway; 
 # in a world where we worried about data redundancy, we would use the `Document.RepresentativeIdentfier` in the getMEI url, then redo
@@ -58,6 +65,7 @@ def process_postcard_data(postcard, postcard_api_data):
             'width': postcard_api_data['APIResponse']['Representative']['MaxWidth'],
             'height': postcard_api_data['APIResponse']['Representative']['MaxHeight'],
         })
+    just_postcards.append(postcard)
 
 # Main script
 
@@ -77,11 +85,16 @@ package_extractor = [
 #     "https://collections.newberry.org//API/search/v3.0/search?query=SystemIdentifier:","&fields=MediaEncryptedIdentifier,MaxWidth,MaxHeight"
 # ]
 
-token = os.getenv('CTX_API_TOKEN')  
+token = os.environ.get('CTX_API_TOKEN')  
+# token = os.getenv('CTX_API_TOKEN')  
 all_gallery_mei = "2KXJ8ZSA9MFDO"
 api_data_top_level = fetch_data(all_gallery_mei)
 
 _all_galleries = process_top_level_data(api_data_top_level)
+
+# postcards = []
+
+# for g
 
 for gallery in _all_galleries:
     gallery_mei = gallery['mei']
@@ -92,6 +105,12 @@ for gallery in _all_galleries:
         postcard_mei = postcard['mei']
         postcard_api_data = fetch_data(postcard_mei)
         process_postcard_data(postcard, postcard_api_data)
+
+
+with open('postcards.json', 'w') as json_file:
+    json.dump(just_postcards, json_file, indent=2)
+with open('galleries.json', 'w') as json_file:
+    json.dump(just_galleries, json_file, indent=2)
 
 # Save _all_galleries to a JSON file
 with open('_all_galleries.json', 'w') as json_file:

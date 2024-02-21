@@ -71,8 +71,8 @@ let showForm = false
     <button 
       class="st-custom-button" 
       data-network="sms" 
-      data-url={dataUrl} 
-      data-image={dataImg} 
+      data-url={emailBody} 
+      data-image={emailBody} 
       data-message={emailBody} 
       data-title={emailSubject}>
         <span class="icon">
