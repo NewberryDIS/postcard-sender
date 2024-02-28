@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import allPostcards from '$lib/postcards.json'
   import allGalleries from '$lib/galleries.json'
   import { onMount } from 'svelte'
@@ -9,15 +9,17 @@
   import Dropdown from '$comps/Dropdown.svelte'
   import ShareButtons from '$comps/ShareButtons.svelte'
 
-  $: id = $page.params.id ||  "2KXJ8ZSUD5ZN7"
+  $: id = $page.params.id || defaultPostcard 
   $: featuredPostcard = allPostcards.filter(f => f.mei === id || f.image === id).pop() || {
-    "gallery": "valentines-day",
-    "title": "Valentine greetings",
-    "mei": "2KXJ8ZSRY0U_H",
-    "image": "2KXJ8ZSS7IHVQ",
-    "imageTitle": "Valentine greetings",
-    "width": "2790",
-    "height": "4295"
+    "gallery": "cats",
+    "title": "Cats",
+    "slug": "cats",
+    "mei": "2KXJ8ZSAKDD11",
+    "context": "Vintage cat postcards",
+    "image": "2KXJ8ZEQRXQP",
+    "imageTitle": "Stripes to the front",
+    "width": "2542",
+    "height": "3893"
   }
   $: $activeGallery = featuredPostcard.gallery
   $: postcards = allPostcards.filter(f => f.gallery === $activeGallery)
