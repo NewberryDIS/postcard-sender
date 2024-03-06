@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store'
+import galleries from '$lib/galleries.json'
 
 export const defaultPostcard = getDefaultPostcard()
 export const activeGallery = writable('')
@@ -35,30 +36,33 @@ export function getDefaultPostcard() {
 }
 
 
-export const slugs = [["bicycling", "Bicycling"],
-  ["chicago", "Chicago"],
-  ["dogs", "Dogs"],
-  ["alcohol", "Alcohol"],
-  ["reading-and-writing", "Reading and Writing"],
-  ["newberry", "Newberry"],
-  ["school-days", "School Days"],
-  ["cats", "Cats"],
-  ["coffee-tea", "Coffee and Tea"],
-  ["womens-rights", "Womens Rights"],
-  ["new-year", "New Year"],
-  ["valentines-day", "Valentine's Day"],
-  ["saint-patricks-day", "Saint Patricks Day"],
-  ["easter", "Easter"],
-  ["fourth-of-july", "Fourth of July"],
-  ["halloween", "Halloween"],
-  ["thanksgiving", "Thanksgiving"],
-  ["christmas", "Christmas"],
-  ["birthdays", "Birthdays"],
-  ["winter", "Winter"],
-  ["spring", "Spring"],
-  ["summer", "Summer"],
-  ["autumn", "Autumn"],
-]
+export const slugs = galleries.map(g => ([g.slug, g.title]))
+
+
+// export const slugs = [["bicycling", "Bicycling"],
+//   ["beer-and-wine", "Beer & Wine"],
+//   ["chicago", "Chicago"],
+//   ["dogs", "Dogs"],
+//   ["reading-and-writing", "Reading and Writing"],
+//   ["newberry", "Newberry"],
+//   ["school-days", "School Days"],
+//   ["cats", "Cats"],
+//   ["coffee-tea", "Coffee and Tea"],
+//   ["womens-rights", "Womens Rights"],
+//   ["new-year", "New Year"],
+//   ["valentines-day", "Valentine's Day"],
+//   ["saint-patricks-day", "Saint Patricks Day"],
+//   ["easter", "Easter"],
+//   ["fourth-of-july", "Fourth of July"],
+//   ["halloween", "Halloween"],
+//   ["thanksgiving", "Thanksgiving"],
+//   ["christmas", "Christmas"],
+//   ["birthdays", "Birthdays"],
+//   ["winter", "Winter"],
+//   ["spring", "Spring"],
+//   ["summer", "Summer"],
+//   ["autumn", "Autumn"],
+// ]
 
 export function imgUrl(ctxMEI, size) {
   let iiifSize
