@@ -12,29 +12,24 @@ export function getDefaultPostcard() {
   // now: Women's Rights https://digital.newberry.org/postcard-sender/2KXJ8ZPG8FKC/
   // March 11: St Pat's https://digital.newberry.org/postcard-sender/2KXJ8ZSUD5ZN7/
   // March 19: Easter https://digital.newberry.org/postcard-sender/2KXJ8ZSUDXBP5/
-  const womensDay = new Date(currentDate.getFullYear(), 2, 8);
-  const stPats = new Date(currentDate.getFullYear(), 2, 17);
-  const easter = new Date(currentDate.getFullYear(), 3, 1);
+  const womensDay = [ "Women's Day" , "2KXJ8ZPG8FKC",  [ 2, 8 ] ]
+  const stPats = [ "St. Patrick's Day", "2KXJ8ZSUD5ZN7",  [ 2, 17 ] ]
+  const easter = [ "Easter", "2KXJ8ZSUDXBP5", [ 2, 31 ] ]
 
   const calendar = [womensDay, stPats, easter]
 
-  switch (true) {
-    case currentDate <= calendar[0]:
-      console.log("// Women's Day")
-      return "2KXJ8ZPG8FKC";
-    case currentDate <= calendar[1]:
-      console.log( "// St. Patrick's Day" )
-      return "2KXJ8ZSUD5ZN7";
-    case currentDate <= calendar[2] :
-      console.log( "// Easter" )
-      return "2KXJ8ZSUDXBP5";
-    default:
-      // cat + moon = default 
-      return "2KXJ8ZSUFUJR0";
-  }
+  for (var i=0; i < calendar.length; i++){  
+    const holidate = new Date(currentDate.getFullYear(), calendar[i][2][0],calendar[i][2][1] )
+    switch (true) {
+      case currentDate <= holidate.setDate(holidate.getDate() + 1):
+        console.log(calendar[i][0])
+        return calendar[i][1];
+      default:
+        // cat + moon = default 
+        return "2KXJ8ZSUFUJR0";
+    } }
 
 }
-
 
 export const slugs = galleries.map(g => ([g.slug, g.title]))
 
