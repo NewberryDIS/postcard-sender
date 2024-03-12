@@ -18,7 +18,10 @@
 @media screen and (max-width: 1023px) {
   .gallery header { display: none;}
   .content header { display: flex;}
-
+  .content header {
+    justify-content: center;
+    align-items: center;
+  }
   main {
     flex-direction: column;
   }

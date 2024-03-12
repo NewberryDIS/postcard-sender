@@ -21,7 +21,7 @@ main {
 
 }
 .featured-image{
-    object-fit: contain;
+    /* object-fit: contain; */
     /* max-height: calc(90% - 60px); */
     flex: auto;
 }
@@ -52,7 +52,7 @@ section {
     justify-content: center;
 
 }
-section :is(img, p) {
+section :is(img, p ) {
     min-width: 0;
     min-height: 0;
 } 

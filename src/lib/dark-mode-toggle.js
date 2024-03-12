@@ -27,7 +27,7 @@ class DarkModeToggle extends HTMLElement {
         const style = document.createElement('style');
         style.textContent = `
             :host {
-                position: absolute;
+                position: fixed;
 z-index: 9001;
             }
 @media screen and (max-width: 1023px) {

@@ -6,6 +6,7 @@
   import { base } from '$app/paths'
   import { defaultPostcard, imgUrl, activeGallery, showImage } from '$lib'
   import Gallery from '$comps/Gallery.svelte'
+  import ImageHolder from '$comps/ImageHolder.svelte'
   import Dropdown from '$comps/Dropdown.svelte'
   import ShareButtons from '$comps/ShareButtons.svelte'
 
@@ -42,7 +43,7 @@
     </header>
     <section>
       {#if $showImage}
-          <img src="{imgUrl(featuredPostcard.image, 'large')}" class="featured-image" alt="" width={getWidth(featuredPostcard)} height="800"/>
+          <ImageHolder src="{imgUrl(featuredPostcard.image, 'large')}" alt="" width={getWidth(featuredPostcard)} />
         <p class="caption">
           {featuredPostcard.imageTitle}
         </p>
@@ -89,93 +90,4 @@
   display: flex;
   flex-wrap: wrap;
 }
-  /* loading spinner */
-  img {
-  /* background-size: 250px 250px; */
-    background: linear-gradient(to right,rgba(var(--fg-color-2), 0.1),rgba(var(--fg-color-2), 0.1));
-    background-repeat: no-repeat;
-    animation: 1s ease-in-out skeleton infinite;
-     background-position: center;
-    will-change: background-size;
-    transition: background-size .11s cubic-bezier(.2,0,.38,.9);
-  }
-  @keyframes skeleton {
-  0% {
-    background-size: 22% 22%;
-  }
-  50% {
-    background-size: 33% 33%;
-  }
-  100% {
-    background-size: 22% 22%;
-  }
-  /* 0% { */
-  /*   background-size: 10% 10%; */
-  /*   background-position: 40% 40%; */
-  /* } */
-  /* 12% { */
-  /*   background-size: 10% 20%; */
-  /*   background-position: 40% 40%; */
-  /* } */
-  /* 24% { */
-  /*   background-size: 10% 10%; */
-  /*   background-position: 40% 60%; */
-  /* } */
-  /* 36% { */
-  /*   background-size: 20% 10%; */
-  /*   background-position: 40% 60%; */
-  /* } */
-  /* 48% { */
-  /*   background-size: 10% 10%; */
-  /*   background-position: 60% 60%; */
-  /* } */
-  /* 60% { */
-  /*   background-size: 10% 20%; */
-  /*   background-position: 60% 40%; */
-  /* } */
-  /* 72% { */
-  /*   background-size: 10% 10%; */
-  /*   background-position: 60% 40%; */
-  /* } */
-  /* 84% { */
-  /*   background-size: 20% 10%; */
-  /*   background-position: 40% 40%; */
-  /* } */
-  /* 100% { */
-  /*   background-size: 10% 10%; */
-  /*   background-position: 40% 40%; */
-  /* } */
-  /* 20% { */
-  /*   background-size: 100px 20px; */
-  /*   background-position: 40% 50%; */
-  /* } */
-  /* 28% { */
-  /*   background-size: 100px 20px; */
-  /*   background-position: 60% 50%; */
-  /* } */
-  /* 51% { */
-  /*   background-size: 0px 20px; */
-  /*   background-position: 60% 50%; */
-  /* } */
-  /* 58% { */
-  /*   background-size: 0px 20px; */
-  /*   background-position: 60% 50%; */
-  /* } */
-  /* 82% { */
-  /*   background-size: 100px 20px; */
-  /*   background-position: 60% 50%; */
-  /* } */
-  /* 83% { */
-  /*   background-size: 100px 20px; */
-  /*   background-position: 40% 50%; */
-  /* } */
-  /* 96% { */
-  /*   background-size: 0px 20px; */
-  /*   background-position: 40% 50%; */
-  /* } */
-  /* 100% { */
-  /*   background-size: 0px 20px; */
-  /*   background-position: 40% 50%; */
-  /* } */
-  }
 </style>
