@@ -1,0 +1,24 @@
+<script>
+export let rotate = false
+</script>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class:rotate >
+<path d="M5.16108 10.0731C4.45387 9.2649 5.02785 8 6.1018 8H17.898C18.972 8 19.5459 9.2649 18.8388 10.0731L13.3169 16.3838C12.6197 17.1806 11.3801 17.1806 10.6829 16.3838L5.16108 10.0731ZM6.65274 9.5L11.8118 15.396C11.9114 15.5099 12.0885 15.5099 12.1881 15.396L17.3471 9.5H6.65274Z" fill="#212121"/>
+</svg>
+
+<style>
+    .rotate {
+        transform: rotate(90deg);
+    }
+    svg {
+        /* transform: scale(0.25); */
+        /* width: 16px; */
+        /* height: 16px; */
+    }
+    svg,
+    path {
+        color: currentColor;
+        fill: currentColor;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+</style>

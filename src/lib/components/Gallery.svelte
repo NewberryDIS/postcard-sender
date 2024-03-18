@@ -10,12 +10,13 @@ import { MasonryGrid } from "@egjs/svelte-grid";
   const align = "center";
   const defaultDirection = "end" 
 
-    afterNavigate((n) => {
-        console.log(n)
-   $showImage = true 
-  })
 beforeNavigate(() => {
+      console.log("hiding image")
     $showImage = false
+  })
+afterNavigate(() => {
+      console.log("showing image")
+    $showImage = true 
   })
 </script>
 <MasonryGrid
@@ -33,6 +34,7 @@ beforeNavigate(() => {
                 class={`tile ${postcard.pixel ? '' : ' image-tile'}`}
                 href="{base}/{postcard.mei}"
                 data-alt={postcard.title}
+        on:click={() => $showImage = false}
             >
                 <img
                     src="{base}/images/{postcard.image}.webp"

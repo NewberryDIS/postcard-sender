@@ -1,8 +1,5 @@
 <script>
   import { onMount } from 'svelte'
-  import '$css/newberry.css'
-  import '$css/style.css'
-  import '$css/mq.css'
 
   onMount( async () => {
     await import('$lib/dark-mode-toggle.js');
@@ -13,6 +10,16 @@
 
   <dark-mode-toggle></dark-mode-toggle>
     <div class="logo-wrapper">
-  <newberry-logo></newberry-logo>
+      <newberry-logo></newberry-logo>
     </div>
   <slot />
+<style>
+
+.logo-wrapper {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    z-index: 9001;
+}
+
+</style>

@@ -142,7 +142,7 @@ let showForm = false
       color: rgb(var(--fg-color-2)) !important;
   }
     .st-custom-buttons {
-        margin: 20px auto;
+        /* margin: 20px auto; */
     }
 
     .st-custom-buttons a {
