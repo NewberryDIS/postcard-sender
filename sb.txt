@@ -1,0 +1,47 @@
+commit bbac2b7eb068dc6de6eae8eba01d0001d58fcfae
+Author: N W <nick33white@gmail.com>
+Date:   Mon Mar 18 17:02:10 2024 -0500
+
+    fix image sizing issue
+
+commit 40110226c261df1b6e26ad571558af0ec5e411aa
+Author: N W <nick33white@gmail.com>
+Date:   Wed Feb 21 15:47:12 2024 -0600
+
+    add default card variable
+
+commit eeb8acaf570380553bc5d9c08d7abc6019a885e4
+Author: N W <nick33white@gmail.com>
+Date:   Wed Feb 21 14:16:00 2024 -0600
+
+    update postcards; update getter scripts
+
+commit 0adf26dd8c6c5f50f184743fb075c0c5469cb29e
+Author: Nicolas <nicolas@pcadmins-MacBook-Pro.local>
+Date:   Thu Feb 15 16:25:22 2024 -0600
+
+    add html email and sharethis sms
+
+commit 457becd99d355e454dfcad7e31730379af3045d8
+Author: Nick White <nick33white@gmail.com>
+Date:   Thu Feb 15 14:43:32 2024 -0600
+
+    add window fix
+
+commit 6c3d34997eb9c2e298dce33e6413d5b87f204d0a
+Author: Nick White <nick33white@gmail.com>
+Date:   Thu Feb 8 20:18:08 2024 -0600
+
+    adds hfs test cv files
+
+commit 033999d51608963539db1a293887909f59bd0ca0
+Author: Nick White <nick33white@gmail.com>
+Date:   Wed Feb 7 20:15:54 2024 -0600
+
+    add final feedback
+
+commit 52967fd629852ab6fd7221b623a27339383979dc
+Author: Nick White <nick33white@gmail.com>
+Date:   Mon Feb 5 16:58:10 2024 -0600
+
+    add static files

@@ -16,9 +16,9 @@
     $: dataImg = imgUrl(image, 'large')
     const dataMessage = dataUrl
     const dataTitle = "Vintage Postcard Greeting!"
-let showForm = false
+    let showForm = false
     let copied = false
-    $: copyText = copied ? 'Copied!' : 'Click to copy'
+    $: copyText = copied ? 'Copied!' : 'Copy link'
     
     async function copyClickHandler (){
       await navigator.clipboard.writeText(dataUrl)
