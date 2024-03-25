@@ -102,6 +102,7 @@ onMount (() => {
     <section class="button-section">
       <ShareButtons />
     </section>
+  <a class="linkmaker" href="{base}/linkmaker">.</a>
     <dark-mode-toggle></dark-mode-toggle>
     <!-- <img src="{base}/webp/{data.itemData.image}.webp" alt="" /> -->
   </div>
@@ -120,6 +121,12 @@ onMount (() => {
 </main>
 
 <style>
+.linkmaker {
+  font-size: 8px;
+  color: rgba(0,0,0,0);
+  position: absolute;
+  left: -100px;
+}
 .bg-img {
   z-index: 0;
   position: absolute;
@@ -220,6 +227,8 @@ section, header {
 section :is(img, p) {
   min-width: 0;
   min-height: 0;
+  object-fit: contain;
+  
 } 
 section {
   text-align: center;
