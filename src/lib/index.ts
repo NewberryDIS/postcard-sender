@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store'
 import galleries from '$lib/galleries.json'
 
-export const defaultPostcard = "2KXJ8ZSPHXAQ6"
+export const defaultPostcard = "2KXJ8ZS6C1E40"
 // export const defaultPostcard = getDefaultPostcard()
 export const activeGallery = writable('')
 export const showImage = writable(false)
@@ -21,6 +21,8 @@ export function getDefaultPostcard() {
 
   for (var i = 0; i < calendar.length; i++) {
     const holidate = new Date(currentDate.getFullYear(), calendar[i][2][0], calendar[i][2][1])
+    console.log("currentDate", typeof (currentDate))
+    console.log("holidate", typeof (holidate))
     switch (true) {
       case currentDate <= holidate.setDate(holidate.getDate() + 1):
         console.log(calendar[i][0])
