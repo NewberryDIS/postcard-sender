@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store'
 import galleries from '$lib/galleries.json'
 
-export const defaultPostcard = "2KXJ8ZS6C1E40"
+export const defaultPostcard = "2KXJ8ZS9LUZKL"
 // export const defaultPostcard = getDefaultPostcard()
 export const activeGallery = writable('')
 export const showImage = writable(false)
