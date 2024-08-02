@@ -55,7 +55,7 @@
     "mei": "2KXJ8ZSAKDRBQ",
     "context": "Vintage coffee postcards",
     "image": "2KXJ8ZS66E6_H",
-    "imageTitle": "Sanka Caf\ufffd Decafeine",
+    "imageTitle": "Sanka Cafe Decafeine",
     "width": "6336",
     "height": "9504"
   },
@@ -78,6 +78,16 @@
     "imageTitle": "Washington Square and Newberry Library, Chicago",
     "width": "3392",
     "height": "2185"
+  },
+  {
+    "title": "Olympics",
+    "slug": "olympics",
+    "mei": "2KXJ8ZS7ICE9K",
+    "context": "Vintage Olympics & sports postcards",
+    "image": "2KXJ8ZSJ3850C",
+    "imageTitle": "VII Olympiade",
+    "width": "9504",
+    "height": "6336"
   },
   {
     "title": "Reading and Writing",
@@ -195,7 +205,7 @@
     "mei": "2KXJ8ZSAKDX4O",
     "context": "Vintage Halloween postcards",
     "image": "2KXJ8ZS2Q1FMB",
-    "imageTitle": "John I. Monroe collection of general postcards",
+    "imageTitle": "Halloween",
     "width": "3933",
     "height": "2577"
   },
@@ -234,9 +244,9 @@
     "slug": "birthdays",
     "mei": "2KXJ8ZSMLBTPJ",
     "context": "Vintage Birthday Postcards",
-    "image": "2KXJ8ZEYZQXS",
-    "imageTitle": "A happy birthday",
-    "width": "2588",
-    "height": "3919"
+    "image": "2KXJ8ZSJ9QEYD",
+    "imageTitle": "Happy birthday may Jesus smile on you today, and make your birthday bright and may he always bless you, too, and guard you day and night",
+    "width": "9504",
+    "height": "6336"
   }
 ]
