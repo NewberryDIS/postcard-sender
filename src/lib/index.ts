@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store'
 import galleries from '$lib/galleries.json'
 
-export const defaultPostcard = "2KXJ8ZS9LUZKL"
+export const defaultPostcard = "2KXJ8ZSUFHK4S"
 // export const defaultPostcard = getDefaultPostcard()
 export const activeGallery = writable('')
 export const showImage = writable(false)
@@ -16,6 +16,9 @@ export function getDefaultPostcard() {
   const womensDay = ["Women's Day", "2KXJ8ZPG8FKC", [2, 8]]
   const stPats = ["St. Patrick's Day", "2KXJ8ZSUD5ZN7", [2, 17]]
   const easter = ["Easter", "2KXJ8ZSUDXBP5", [2, 31]]
+  const schoolDays = ["School Days", "2KXJ8ZSUQNSW4", [8, 1]]
+  const autumn = ["Autumn", "2KXJ8ZSUK99PP", [8, 15]]
+  const winter = ["Winter", "2KXJ8ZSUFHK4S", [11, 1]]
 
   const calendar = [womensDay, stPats, easter]
 

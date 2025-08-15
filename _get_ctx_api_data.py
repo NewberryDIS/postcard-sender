@@ -1,10 +1,10 @@
 import requests
 import json
 import os
-from dotenv import load_dotenv, find_dotenv
+# from dotenv import load_dotenv, find_dotenv
 from slugify import slugify
 
-load_dotenv(find_dotenv())
+# load_dotenv(find_dotenv())
 
 just_galleries = []
 just_postcards = []
